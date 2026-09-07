@@ -88,7 +88,7 @@ function main() {
   }
 
   const pkg = JSON.parse(fs.readFileSync(path.join(root, 'package.json'), 'utf8'));
-  if (pkg.name !== '@meridian/lantern-sdk') {
+  if (pkg.name !== '@northgate/lantern-sdk') {
     problems.push(`unexpected package name ${pkg.name}`);
   }
   if (!pkg.metadata) {

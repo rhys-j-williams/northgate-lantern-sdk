@@ -27,11 +27,11 @@ describe('LanternSessionInterceptor', () => {
     setup({ sessionHeaderUrlPrefixes: ['/api/', 'http://localhost:4500'] });
     http.get('/api/v1/accounts').subscribe();
     http.get('http://localhost:4500/health').subscribe();
-    http.get('https://static.meridiantrust.example/config.json').subscribe();
+    http.get('https://static.northgatetrust.example/config.json').subscribe();
 
     expect(ctrl.expectOne('/api/v1/accounts').request.headers.get('X-Analytics-Session')).toBe('las_spec');
     expect(ctrl.expectOne('http://localhost:4500/health').request.headers.get('X-Analytics-Session')).toBe('las_spec');
-    const thirdParty = ctrl.expectOne('https://static.meridiantrust.example/config.json');
+    const thirdParty = ctrl.expectOne('https://static.northgatetrust.example/config.json');
     expect(thirdParty.request.headers.has('X-Analytics-Session')).toBeFalse();
   });
 

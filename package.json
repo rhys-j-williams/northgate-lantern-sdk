@@ -1,7 +1,7 @@
 {
   "name": "lantern-sdk-workspace",
   "version": "2.4.1",
-  "description": "Workspace for @meridian/lantern-sdk, the Angular wrapper around the Lumenview Lantern vendor script. Digital Analytics Enablement.",
+  "description": "Workspace for @northgate/lantern-sdk, the Angular wrapper around the Lumenview Lantern vendor script. Digital Analytics Enablement.",
   "private": true,
   "engines": {
     "node": "14.21.3",

@@ -8,7 +8,7 @@
     "noImplicitReturns": true,
     "noFallthroughCasesInSwitch": true,
     "paths": {
-      "@meridian/lantern-sdk": [
+      "@northgate/lantern-sdk": [
         "dist/lantern-sdk"
       ]
     },

@@ -30,7 +30,7 @@ describe('LanternService', () => {
     svc.identify('CUS-100003', { segment: 'retail' });
 
     expect(vendor.track).toHaveBeenCalledWith('transfer.submit', jasmine.objectContaining({
-      amountBand: 'lt-500', app: 'retail-web', appVersion: '3.1.0', sdk: '@meridian/lantern-sdk@2.4.1'
+      amountBand: 'lt-500', app: 'retail-web', appVersion: '3.1.0', sdk: '@northgate/lantern-sdk@2.4.1'
     }));
     expect(vendor.page).toHaveBeenCalledWith('/accounts', jasmine.objectContaining({ app: 'retail-web' }));
     expect(vendor.identify).toHaveBeenCalledWith('CUS-100003', { segment: 'retail' });
