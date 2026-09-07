@@ -1,4 +1,4 @@
-# @meridian/lantern-sdk
+# @northgate/lantern-sdk
 
 Angular wrapper for the Lumenview Lantern web analytics script. Owned by **Digital Analytics
 Enablement (DAE)**, Charlotte. Slack `#dae-lantern`, Jira `LNTN`. On-call is business hours only;
@@ -17,22 +17,22 @@ Current release: **2.4.1** (H1 2024 train). Next planned: 2.5.0, H2 2024 train, 
 - `LanternSessionInterceptor` puts `X-Analytics-Session` on outbound `HttpClient` calls so BFF logs
   in Splunk can be joined to the vendor's session view
 
-Consumers: retail-web (Meridian Online), business-web (Meridian Business), Beacon ops console
+Consumers: retail-web (Northgate Online), business-web (Northgate Business), Beacon ops console
 (read-only mode, `LNTN-302`). Iris does not use it; the Iris widget has its own vendor tagging.
 
 ## Installing
 
 ```
-npm install @meridian/lantern-sdk@2.4.1 --save-exact
+npm install @northgate/lantern-sdk@2.4.1 --save-exact
 ```
 
-From Artifactory `npm-meridian`. Peer range is Angular 12 (see below). If npm complains about
+From Artifactory `npm-northgate`. Peer range is Angular 12 (see below). If npm complains about
 peers on your application's Angular, put `legacy-peer-deps=true` in the application's `.npmrc`;
 retail-web and business-web already have it.
 
 ```ts
 // app.module.ts
-import { LanternModule } from '@meridian/lantern-sdk';
+import { LanternModule } from '@northgate/lantern-sdk';
 
 @NgModule({
   imports: [
@@ -61,7 +61,7 @@ Do not point UAT at the prod write key, it pollutes the dashboards and Finance n
 | key | default | notes |
 | --- | --- | --- |
 | `writeKey` | required | Lumenview project write key |
-| `scriptUrl` | Meridian hosted copy, see below | override only in the analytics sandbox |
+| `scriptUrl` | Northgate hosted copy, see below | override only in the analytics sandbox |
 | `collectorUrl` | script default | the local estate points this at `lantern-collector-mock` on 4607 |
 | `trackRouterEvents` | `true` | |
 | `attachSessionHeader` | `true` | |
@@ -75,8 +75,8 @@ Do not point UAT at the prod write key, it pollutes the dashboards and Finance n
 
 `lantern.min.js` is **not** loaded from the vendor CDN. The egress proxy blocks it everywhere but
 the analytics sandbox, and Third Party Risk wanted a copy we control after the 2021 supply chain
-review (`GIS-1188`). The default `scriptUrl` is the Meridian hosted copy at
-`static.meridiantrust.example/vendor/lantern/4/`. DAE refreshes it when the vendor cuts a release we
+review (`GIS-1188`). The default `scriptUrl` is the Northgate hosted copy at
+`static.northgatetrust.example/vendor/lantern/4/`. DAE refreshes it when the vendor cuts a release we
 have tested; the current copy is Web SDK 4.11. The refresh procedure is in the DAE runbook, and
 involves the CAB because it is technically a prod change to a static bucket.
 
@@ -152,5 +152,5 @@ during the release window, app teams merge them. History in `CHANGELOG.md`.
 
 Started 2020 as an inline snippet in retail-web, extracted to a library in early 2021 after
 business-web copied the snippet and diverged (`LNTN-101`). 1.x was the un-scoped `lantern-angular`
-package; 2.0 (Nov 2021) renamed it to `@meridian/lantern-sdk` and moved to Angular 12. 2.2 added the
+package; 2.0 (Nov 2021) renamed it to `@northgate/lantern-sdk` and moved to Angular 12. 2.2 added the
 router masking after GIS-1471. 2.4 is the current line.

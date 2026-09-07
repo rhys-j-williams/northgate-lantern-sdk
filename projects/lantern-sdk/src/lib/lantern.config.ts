@@ -8,7 +8,7 @@ export interface LanternConfig {
   /** Lumenview project write key. Not a secret, but do not use the prod key in UAT (LNTN-388). */
   writeKey: string;
   /**
-   * Where the vendor script is loaded from. Defaults to the Meridian hosted copy; the vendor CDN
+   * Where the vendor script is loaded from. Defaults to the Northgate hosted copy; the vendor CDN
    * is blocked by the egress proxy in every environment except the analytics sandbox.
    */
   scriptUrl?: string;
@@ -38,7 +38,7 @@ export interface LanternConfig {
 export const LANTERN_CONFIG = new InjectionToken<LanternConfig>('LANTERN_CONFIG');
 
 export const LANTERN_DEFAULTS: Required<Omit<LanternConfig, 'writeKey' | 'appName' | 'appVersion' | 'collectorUrl'>> = {
-  scriptUrl: 'https://static.meridiantrust.example/vendor/lantern/4/lantern.min.js',
+  scriptUrl: 'https://static.northgatetrust.example/vendor/lantern/4/lantern.min.js',
   trackRouterEvents: true,
   attachSessionHeader: true,
   sessionHeaderUrlPrefixes: [],

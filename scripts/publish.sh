@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # Release step 4 of the DAE release checklist (Confluence: DAE / Lantern SDK / Releasing).
 # Builds, verifies the output format, packs, and publishes to the registry in .npmrc
-# (Artifactory npm-meridian in the real world; the local Verdaccio on 4873 for the estate).
+# (Artifactory npm-northgate in the real world; the local Verdaccio on 4873 for the estate).
 #
 # Needs: node 14.21.3 active, a registry that accepts the publisher token. Publishing from a
 # laptop is allowed for patch releases only; minors go through the Jenkins job lantern-sdk-release.
@@ -20,7 +20,7 @@ if [ "$HAVE" != "$WANT" ]; then
 fi
 
 VERSION="$(node -p "require('./projects/lantern-sdk/package.json').version")"
-echo "publish: @meridian/lantern-sdk@$VERSION -> $REGISTRY_URL"
+echo "publish: @northgate/lantern-sdk@$VERSION -> $REGISTRY_URL"
 
 npm run build
 node scripts/verify-view-engine.js
@@ -35,7 +35,7 @@ if ! curl -fsS -o /dev/null "$REGISTRY_URL/-/ping"; then
   echo "publish: registry $REGISTRY_URL not reachable; for the local estate run mock-external/scripts/verdaccio-up.sh" >&2
   exit 1
 fi
-if curl -fsS -o /dev/null "$REGISTRY_URL/@meridian%2flantern-sdk/$VERSION"; then
+if curl -fsS -o /dev/null "$REGISTRY_URL/@northgate%2flantern-sdk/$VERSION"; then
   echo "publish: $VERSION already on the registry, nothing to do"
   exit 0
 fi
