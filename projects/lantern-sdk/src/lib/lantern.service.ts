@@ -145,7 +145,7 @@ export class LanternService {
       ...(properties || {}),
       app: this.cfg.appName,
       appVersion: this.cfg.appVersion,
-      sdk: '@meridian/lantern-sdk@2.4.1'
+      sdk: '@northgate/lantern-sdk@2.4.1'
     };
   }
 

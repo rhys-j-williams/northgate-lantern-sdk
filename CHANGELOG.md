@@ -44,8 +44,8 @@ DAE keeps this by hand. Ticket keys are LNTN unless stated.
 
 ## 2.0.0 - 2021-11-09
 
-- renamed from `lantern-angular` to `@meridian/lantern-sdk`, moved to Angular 12.2.x, Node 14
-- vendor script served from the Meridian hosted copy (GIS-1188)
+- renamed from `lantern-angular` to `@northgate/lantern-sdk`, moved to Angular 12.2.x, Node 14
+- vendor script served from the Northgate hosted copy (GIS-1188)
 
 ## 1.x
 
