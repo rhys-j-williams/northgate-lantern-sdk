@@ -6,8 +6,8 @@
   "private": false,
   "repository": {
     "type": "git",
-    "url": "https://github.com/rhys-j-williams/meridian-cswt-estate.git",
-    "directory": "lantern-sdk"
+    "url": "https://github.com/rhys-j-williams/meridian-lantern-sdk.git",
+    "directory": "projects/lantern-sdk"
   },
   "publishConfig": {
     "registry": "http://localhost:4873"
