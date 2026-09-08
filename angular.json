@@ -35,6 +35,15 @@
             "tsConfig": "projects/lantern-sdk/tsconfig.spec.json",
             "karmaConfig": "projects/lantern-sdk/karma.conf.js"
           }
+        },
+        "lint": {
+          "builder": "@angular-eslint/builder:lint",
+          "options": {
+            "lintFilePatterns": [
+              "projects/lantern-sdk/**/*.ts",
+              "projects/lantern-sdk/**/*.html"
+            ]
+          }
         }
       }
     }
