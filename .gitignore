@@ -1,3 +1,4 @@
+/.angular/cache
 node_modules/
 dist/
 tmp/
@@ -17,3 +18,4 @@ Thumbs.db
 !.env.example
 .cx-reports/
 .scannerwork/
+!docs/upgrade/**/*.log
