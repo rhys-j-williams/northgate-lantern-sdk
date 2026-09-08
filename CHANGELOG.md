@@ -2,6 +2,26 @@
 
 DAE keeps this by hand. Ticket keys are LNTN unless stated.
 
+## 3.0.0 - unreleased (2026.10.2 train)
+
+Semver major: Angular 12 -> 13 and View Engine -> Ivy partial compilation. First of the two
+LNTN-401 catch-up hops (13 -> 14 follows as 4.0.0); ADR `docs/adr/0001-angular-12-to-13.md`,
+evidence `docs/upgrade/LNTN-401/12-to-13/`. Public API, config keys, header name and the GIS-1471
+masking rules are unchanged; no migration steps in application code.
+
+- BREAKING 401: peer range is `@angular/{common,core,router} >=13.0.0 <14.0.0`. Applications on
+  Angular 12 stay on 2.4.1; applications on Angular 14 (retail-web) stay on 2.4.1 until 4.0.0.
+- BREAKING 401: output is Angular Package Format 13 with `compilationMode: partial`. No UMD bundle,
+  no `.metadata.json`, nothing for `ngcc` to process; the consumer's Angular linker handles it.
+- 401: Angular 13.4.0, CLI 13.3.11, ng-packagr 13.3.1, TypeScript 4.6.4. Node 14.21.3, RxJS 6.6.7
+  and zone.js 0.11.4 unchanged.
+- 401: `verify:view-engine` replaced by `verify:partial-ivy` (`scripts/verify-partial-ivy.js`);
+  `publish:local` now verifies both `dist/lantern-sdk` and the packed tarball before publishing.
+- 401: TSLint and codelyzer removed; lint is angular-eslint 13 with the same rule intent
+  (`lantern` selector prefix, lifecycle interfaces, no input/output rename, template checks).
+- 401: specs for session resume inside / outside the 30 minute idle window and for the `debug`
+  flag; `SDK_VERSION` reported as `@northgate/lantern-sdk@3.0.0` in the vendor context.
+
 ## 2.4.1 - 2024-05-21
 
 - 437: `sessionId()` no longer throws when sessionStorage is disabled by group policy (branch PCs)

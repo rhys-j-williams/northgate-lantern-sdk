@@ -1,0 +1,12 @@
+Using package manager: 'npm'
+Collecting installed dependencies...
+Found 26 dependencies.
+    We analyzed your package.json, there are some packages to update:
+    
+      Name                               Version                  Command to update
+     --------------------------------------------------------------------------------
+      @angular/cli                       12.2.18 -> 13.3.9        ng update @angular/cli@13
+      @angular/core                      12.2.17 -> 13.4.0        ng update @angular/core@13
+    
+    There might be additional packages which don't provide 'ng update' capabilities that are outdated.
+    You can update the additional packages by running the update command of your package manager.

@@ -17,5 +17,7 @@ Thumbs.db
 .env.*
 !.env.example
 .cx-reports/
+.sonar-reports/
+.xray-reports/
 .scannerwork/
 !docs/upgrade/**/*.log

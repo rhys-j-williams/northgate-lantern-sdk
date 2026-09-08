@@ -1,0 +1,16 @@
+
+> @northgate/retail-web@14.31.2 lint
+> ng lint
+
+
+Linting "retail-web"...
+
+/home/ubuntu/retail-web-lantern3/src/zone-flags.ts
+  8:12  warning  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+  9:12  warning  Unexpected any. Specify a different type  @typescript-eslint/no-explicit-any
+
+✖ 2 problems (0 errors, 2 warnings)
+
+Lint warnings found in the listed files.
+
+exit=0

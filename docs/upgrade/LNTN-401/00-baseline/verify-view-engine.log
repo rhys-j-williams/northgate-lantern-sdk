@@ -1,0 +1,10 @@
+
+> lantern-sdk-workspace@2.4.1 verify:view-engine /home/ubuntu/repos/northgate-lantern-sdk
+> node scripts/verify-view-engine.js
+
+verify-view-engine: @northgate/lantern-sdk@2.4.1 at /home/ubuntu/repos/northgate-lantern-sdk/dist/lantern-sdk
+  metadata files : 1
+  js files       : 11
+  d.ts files     : 9
+  OK: View Engine format, no Ivy output
+exit=0
