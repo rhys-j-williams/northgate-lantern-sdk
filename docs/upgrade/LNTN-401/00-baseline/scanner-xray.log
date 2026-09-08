@@ -1,0 +1,30 @@
+Xray 3.9.4-northgate (Northgate offline mirror 2024-11-18)
+Project lantern-sdk-workspace [npm] watch northgate-cswt-prod
+Scanned 1084 components from package-lock.json; runtime node 14.21.3 in 17 ms
+
+  Critical 3  High 17  Medium 11  Low 6   (lifecycle 7, dev only 33)
+
+  [Critical] loader-utils@1.4.2                           XRAY-120045 CVE-2022-37601  fix: 2.0.3
+  [Critical] loader-utils@2.0.0                           XRAY-120045 CVE-2022-37601  fix: 2.0.3
+  [Critical] webpack@5.50.0                               XRAY-124900 CVE-2023-28154  fix: 5.76.0
+  [High    ] @angular/core@9.0.0                          XRAY-127400 NORTHGATE-EOL-ANGULAR  fix: 18.2.13
+  [High    ] @angular/core@12.2.17                        XRAY-127400 NORTHGATE-EOL-ANGULAR  fix: 18.2.13
+  [High    ] braces@2.3.2                                 XRAY-124300 CVE-2024-4068  fix: 3.0.3
+  [High    ] http-proxy-middleware@0.19.1                 XRAY-124700 CVE-2024-21536  fix: 2.0.7
+  [High    ] ip@1.1.9                                     XRAY-124000 CVE-2024-29415  no fix
+  [High    ] json5@1.0.2                                  XRAY-121002 CVE-2022-46175  fix: 2.2.2
+  [High    ] loader-utils@1.4.2                           XRAY-120046 CVE-2022-37599  fix: 2.0.4
+  [High    ] loader-utils@1.4.2                           XRAY-120047 CVE-2022-37603  fix: 2.0.4
+  [High    ] loader-utils@2.0.0                           XRAY-120046 CVE-2022-37599  fix: 2.0.4
+  [High    ] loader-utils@2.0.0                           XRAY-120047 CVE-2022-37603  fix: 2.0.4
+  [High    ] minimatch@3.0.4                              XRAY-121600 CVE-2022-3517  fix: 3.0.5
+  [High    ] node@14.21.3                                 XRAY-127300 NORTHGATE-EOL-NODE14  fix: 16.20.2
+  [High    ] node-forge@0.10.0                            XRAY-122700 CVE-2022-24771  fix: 1.3.0
+  [High    ] node-forge@0.10.0                            XRAY-130000 CVE-2022-24772  fix: 1.3.0
+  [High    ] semver@7.3.5                                 XRAY-122310 CVE-2022-25883  fix: 7.5.2
+  [High    ] set-value@2.0.1                              XRAY-123500 CVE-2021-23440  fix: 4.0.1
+  [High    ] webpack-dev-middleware@5.0.0                 XRAY-124800 CVE-2024-4068  fix: 5.3.4
+
+Reports written to .xray-reports
+Policy gate FAILED: 20 violation(s) at or above high (loader-utils@1.4.2, loader-utils@2.0.0, webpack@5.50.0, @angular/core@9.0.0, @angular/core@12.2.17, ...)
+exit=1

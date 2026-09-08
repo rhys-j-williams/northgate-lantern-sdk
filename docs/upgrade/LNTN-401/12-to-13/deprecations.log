@@ -1,0 +1,25 @@
+# LNTN-401 Angular 12 -> 13 deprecation log (northgate-lantern-sdk)
+# Source: ng-update-core-cli.log, build.log, test.log, npm-ci.log in this directory.
+#
+# ng update @angular/core@13.4.0 @angular/cli@13.3.11 migrations applied:
+#   - "Remove deprecated options from 'angular.json' that are no longer present in v13"
+#       -> removed the @angular-devkit/build-angular:tslint architect target (builder removed in CLI 13)
+#   - "Update library projects to be published in partial mode and removed deprecated options from ng-packagr configuration"
+#       -> projects/lantern-sdk/tsconfig.lib.prod.json: enableIvy:false / skipTemplateCodegen / strictMetadataEmit /
+#          enableResourceInlining removed, compilationMode: "partial" added
+#   - "In Angular version 13, the teardown flag in TestBed will be enabled by default" -> no file change (no explicit teardown option in test.ts)
+#   - "Remove polyfills required only for Internet Explorer" -> no change, library has no polyfills entry
+#   - "Remove no longer valid Angular schematic options from angular.json" -> angular.json trimmed
+#   - "[routerLink]='' -> [routerLink]='[]'", "entryComponents no longer necessary" -> no matches in this source tree
+#   - "Updating .gitignore to include .angular/cache" -> /.angular/cache added to .gitignore
+#
+# Deprecations outstanding after the hop (none block the build; zero build warnings, see build.log):
+#   - none reported by @angular/compiler-cli 13.4.0 for this source tree
+#   - Angular 13 itself is end of life (intermediate hop only; 13 -> 14 follows under LNTN-401)
+#   - Node 14.21.3 is end of life (NORTHGATE-EOL-NODE14, XRAY-127300); inside the Angular 13 range, bump planned with the 13 -> 14 or 14 -> 15 hop
+#   - eslint 8.57.1 is the last eslint 8 (flat-config eslint 9 needs angular-eslint >= 18); acceptable for the 13 line
+#
+# Removed from the repository in this hop:
+#   - scripts/verify-view-engine.js (replaced by scripts/verify-partial-ivy.js)
+#   - tslint.json, tslint, codelyzer (replaced by .eslintrc.json + @angular-eslint 13.5.0)
+#   - UMD bundle and northgate-lantern-sdk.metadata.json are no longer part of the published package (ng-packagr 13)

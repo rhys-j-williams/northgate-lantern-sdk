@@ -37,14 +37,11 @@
           }
         },
         "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
+          "builder": "@angular-eslint/builder:lint",
           "options": {
-            "tsConfig": [
-              "projects/lantern-sdk/tsconfig.lib.json",
-              "projects/lantern-sdk/tsconfig.spec.json"
-            ],
-            "exclude": [
-              "**/node_modules/**"
+            "lintFilePatterns": [
+              "projects/lantern-sdk/**/*.ts",
+              "projects/lantern-sdk/**/*.html"
             ]
           }
         }

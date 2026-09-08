@@ -1,0 +1,39 @@
+# /home/ubuntu/retail-web-baseline (detached scratch worktree of northgate-retail-web) - installed @northgate/lantern-sdk
+{
+  "name": "@northgate/lantern-sdk",
+  "version": "2.4.1",
+  "peerDependencies": {
+    "@angular/common": ">=12.0.0 <13.0.0",
+    "@angular/core": ">=12.0.0 <13.0.0",
+    "@angular/router": ">=12.0.0 <13.0.0",
+    "rxjs": ">=6.5.0 <7.0.0"
+  },
+  "ngcc": {
+    "es2015": "14.3.0",
+    "fesm2015": "14.3.0",
+    "module": "14.3.0",
+    "typings": "14.3.0"
+  }
+}
+# manifest pin in scratch package.json:
+42:    "@northgate/lantern-sdk": "2.4.1",
+# ls node_modules/@northgate/lantern-sdk
+__ivy_ngcc__
+bundles
+esm2015
+fesm2015
+lib
+node_modules
+northgate-lantern-sdk.d.ts
+northgate-lantern-sdk.d.ts.__ivy_ngcc_bak
+northgate-lantern-sdk.d.ts.map
+northgate-lantern-sdk.metadata.json
+package.json
+public-api.d.ts
+# bundle markers
+# bundle markers in /home/ubuntu/retail-web-baseline/dist/retail-web/en-US/main.*.js
+sdk:"@northgate/lantern-sdk@2.4.1"
+      1 "2.4.1"
+data-lantern-sdk occurrences: 2
+ngDeclare (partial Ivy linked away) occurrences: 0
+main bundle bytes: 1860465

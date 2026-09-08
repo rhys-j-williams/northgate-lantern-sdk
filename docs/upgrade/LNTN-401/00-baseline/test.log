@@ -1,0 +1,50 @@
+- Generating browser application bundles (phase: setup)...
+Compiling @angular/core : es2015 as esm2015
+Compiling @angular/core/testing : es2015 as esm2015
+Compiling @angular/common : es2015 as esm2015
+Compiling @angular/platform-browser : es2015 as esm2015
+Compiling @angular/platform-browser-dynamic : es2015 as esm2015
+Compiling @angular/platform-browser/testing : es2015 as esm2015
+Compiling @angular/compiler/testing : es2015 as esm2015
+Compiling @angular/platform-browser-dynamic/testing : es2015 as esm2015
+Compiling @angular/common/testing : es2015 as esm2015
+Compiling @angular/router : es2015 as esm2015
+Compiling @angular/router/testing : es2015 as esm2015
+Compiling @angular/common/http : es2015 as esm2015
+Compiling @angular/common/http/testing : es2015 as esm2015
+08 09 2026 17:03:01.068:INFO [karma-server]: Karma v6.3.20 server started at http://localhost:9877/
+08 09 2026 17:03:01.069:INFO [launcher]: Launching browsers ChromeHeadlessCI with concurrency unlimited
+08 09 2026 17:03:01.072:INFO [launcher]: Starting browser ChromeHeadless
+✔ Browser application bundle generation complete.
+08 09 2026 17:03:03.554:INFO [Chrome Headless 133.0.0.0 (Linux 0.0.0)]: Connected on socket 2adgAATkf1G8jiDEAAAA with id 98962067
+Chrome Headless 133.0.0.0 (Linux 0.0.0): Executed 0 of 18 SUCCESS (0 secs / 0 secs)
+[1A[2KChrome Headless 133.0.0.0 (Linux 0.0.0): Executed 1 of 18 SUCCESS (0 secs / 0.004 secs)
+[1A[2KChrome Headless 133.0.0.0 (Linux 0.0.0): Executed 2 of 18 SUCCESS (0 secs / 0.027 secs)
+[1A[2KChrome Headless 133.0.0.0 (Linux 0.0.0): Executed 3 of 18 SUCCESS (0 secs / 0.03 secs)
+[1A[2KChrome Headless 133.0.0.0 (Linux 0.0.0): Executed 4 of 18 SUCCESS (0 secs / 0.033 secs)
+[1A[2KChrome Headless 133.0.0.0 (Linux 0.0.0): Executed 5 of 18 SUCCESS (0 secs / 0.035 secs)
+[1A[2KChrome Headless 133.0.0.0 (Linux 0.0.0): Executed 6 of 18 SUCCESS (0 secs / 0.036 secs)
+[1A[2KChrome Headless 133.0.0.0 (Linux 0.0.0): Executed 7 of 18 SUCCESS (0 secs / 0.049 secs)
+[1A[2KChrome Headless 133.0.0.0 (Linux 0.0.0): Executed 8 of 18 SUCCESS (0 secs / 0.051 secs)
+[1A[2KChrome Headless 133.0.0.0 (Linux 0.0.0): Executed 9 of 18 SUCCESS (0 secs / 0.053 secs)
+[1A[2KChrome Headless 133.0.0.0 (Linux 0.0.0): Executed 10 of 18 SUCCESS (0 secs / 0.055 secs)
+[1A[2KChrome Headless 133.0.0.0 (Linux 0.0.0): Executed 11 of 18 SUCCESS (0 secs / 0.057 secs)
+[1A[2KChrome Headless 133.0.0.0 (Linux 0.0.0): Executed 12 of 18 SUCCESS (0 secs / 0.058 secs)
+[1A[2KChrome Headless 133.0.0.0 (Linux 0.0.0): Executed 13 of 18 SUCCESS (0 secs / 0.06 secs)
+[1A[2KChrome Headless 133.0.0.0 (Linux 0.0.0): Executed 14 of 18 SUCCESS (0 secs / 0.061 secs)
+[1A[2KChrome Headless 133.0.0.0 (Linux 0.0.0): Executed 15 of 18 SUCCESS (0 secs / 0.062 secs)
+[1A[2KChrome Headless 133.0.0.0 (Linux 0.0.0): Executed 16 of 18 SUCCESS (0 secs / 0.063 secs)
+[1A[2KChrome Headless 133.0.0.0 (Linux 0.0.0): Executed 17 of 18 SUCCESS (0 secs / 0.064 secs)
+[1A[2KChrome Headless 133.0.0.0 (Linux 0.0.0): Executed 18 of 18 SUCCESS (0 secs / 0.065 secs)
+[1A[2KChrome Headless 133.0.0.0 (Linux 0.0.0): Executed 18 of 18 SUCCESS (0.079 secs / 0.065 secs)
+TOTAL: 18 SUCCESS
+✔ Browser application bundle generation complete.
+
+=============================== Coverage summary ===============================
+Statements   : 93.86% ( 153/163 )
+Branches     : 79.57% ( 113/142 )
+Functions    : 97.56% ( 40/41 )
+Lines        : 93.42% ( 142/152 )
+================================================================================
+✔ Browser application bundle generation complete.
+exit=0

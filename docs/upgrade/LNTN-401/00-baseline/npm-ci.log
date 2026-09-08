@@ -1,0 +1,38 @@
+
+> fsevents@1.2.13 install /home/ubuntu/repos/northgate-lantern-sdk/node_modules/webpack-dev-server/node_modules/fsevents
+> node install.js
+
+
+Skipping 'fsevents' build as platform linux is not supported
+
+> nice-napi@1.0.2 install /home/ubuntu/repos/northgate-lantern-sdk/node_modules/nice-napi
+> node-gyp-build
+
+
+> esbuild@0.13.8 postinstall /home/ubuntu/repos/northgate-lantern-sdk/node_modules/esbuild
+> node install.js
+
+
+> core-js@3.16.0 postinstall /home/ubuntu/repos/northgate-lantern-sdk/node_modules/core-js
+> node -e "try{require('./postinstall')}catch(e){}"
+
+[96mThank you for using core-js ([94m https://github.com/zloirock/core-js [96m) for polyfilling JavaScript standard library![0m
+
+[96mThe project needs your help! Please consider supporting of core-js:[0m
+[96m>[94m https://opencollective.com/core-js [0m
+[96m>[94m https://patreon.com/zloirock [0m
+[96m>[94m https://paypal.me/zloirock [0m
+[96m>[94m bitcoin: bc1qlea7544qtsmj2rayg0lthvza9fau63ux0fstcz [0m
+
+[96mAlso, the author of core-js ([94m https://github.com/zloirock [96m) is looking for a good job -)[0m
+
+
+> @angular/cli@12.2.18 postinstall /home/ubuntu/repos/northgate-lantern-sdk/node_modules/@angular/cli
+> node ./bin/postinstall/script.js
+
+added 1358 packages in 9.287s
+
+real	0m9.612s
+user	0m9.447s
+sys	0m2.134s
+exit=0
