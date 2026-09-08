@@ -47,6 +47,5 @@
         }
       }
     }
-  },
-  "defaultProject": "lantern-sdk"
+  }
 }

@@ -5,7 +5,7 @@ import { installQueueStub, LanternProperties, LanternVendorApi, LanternWindow } 
 
 const SESSION_STORAGE_KEY = 'mtb.lantern.session';
 const SESSION_IDLE_MS = 30 * 60 * 1000;
-const SDK_VERSION = '3.0.0';
+const SDK_VERSION = '4.0.0';
 
 /**
  * Thin wrapper over window.Lantern. Everything goes through here so the application code never
@@ -26,7 +26,7 @@ export class LanternService {
 
   constructor(
     @Optional() @Inject(LANTERN_CONFIG) config: LanternConfig | null,
-    // kept typed as Object so the 3.0.0 constructor signature matches 2.x for consumers
+    // kept typed as Object so the constructor signature matches 2.x for consumers
     // eslint-disable-next-line @typescript-eslint/ban-types
     @Inject(DOCUMENT) doc: Object,
     // eslint-disable-next-line @typescript-eslint/ban-types
