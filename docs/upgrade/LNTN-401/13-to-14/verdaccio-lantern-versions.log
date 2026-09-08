@@ -1,0 +1,9 @@
+[ '3.0.0', '4.0.0' ]
+peerDependencies =  
+{
+  '@angular/common': '>=14.0.0 <15.0.0',
+  '@angular/core': '>=14.0.0 <15.0.0',
+  '@angular/router': '>=14.0.0 <15.0.0',
+  rxjs: '>=6.5.0 <7.0.0'
+}
+dist.shasum = '6d0a040188d9816fe347c247c16d87400754c5b9'

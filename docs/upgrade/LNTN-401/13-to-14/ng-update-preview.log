@@ -1,0 +1,15 @@
+npx: installed 215 in 8.859s
+Using package manager: npm
+Collecting installed dependencies...
+Found 32 dependencies.
+    We analyzed your package.json, there are some packages to update:
+    
+      Name                                    Version                  Command to update
+     -------------------------------------------------------------------------------------
+      @angular-eslint/schematics              13.5.0 -> 22.5.0         ng update @angular-eslint/schematics
+      @angular/cli                            13.3.11 -> 14.2.9        ng update @angular/cli@14
+      @angular/core                           13.4.0 -> 14.3.0         ng update @angular/core@14
+    
+    There might be additional packages which don't provide 'ng update' capabilities that are outdated.
+    You can update the additional packages by running the update command of your package manager.
+exit=0

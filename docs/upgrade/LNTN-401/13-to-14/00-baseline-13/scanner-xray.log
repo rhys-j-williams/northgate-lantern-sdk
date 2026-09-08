@@ -1,0 +1,16 @@
+Xray 3.9.4-northgate (Northgate offline mirror 2024-11-18)
+Project lantern-sdk-workspace [npm] watch northgate-cswt-prod
+Scanned 1022 components from package-lock.json; runtime node 14.21.3 in 16 ms
+
+  Critical 0  High 6  Medium 6  Low 5   (lifecycle 5, dev only 13)
+
+  [High    ] @angular/core@13.4.0                         XRAY-127400 NORTHGATE-EOL-ANGULAR  fix: 18.2.13
+  [High    ] minimatch@3.0.4                              XRAY-121600 CVE-2022-3517  fix: 3.0.5
+  [High    ] node@14.21.3                                 XRAY-127300 NORTHGATE-EOL-NODE14  fix: 16.20.2
+  [High    ] semver@7.3.4                                 XRAY-122310 CVE-2022-25883  fix: 7.5.2
+  [High    ] semver@7.3.5                                 XRAY-122310 CVE-2022-25883  fix: 7.5.2
+  [High    ] webpack-dev-middleware@5.3.0                 XRAY-124800 CVE-2024-4068  fix: 5.3.4
+
+Reports written to .xray-reports
+Policy gate FAILED: 6 violation(s) at or above high (@angular/core@13.4.0, minimatch@3.0.4, node@14.21.3, semver@7.3.4, semver@7.3.5, ...)
+exit=1

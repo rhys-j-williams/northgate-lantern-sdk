@@ -1,0 +1,44 @@
+# LNTN-401 Angular 13 -> 14 deprecation log (northgate-lantern-sdk)
+# Source: ng-update-preview.log, ng-update-core-cli.log, build.log, test.log, npm-install-lockfile.log in this directory.
+#
+# ng update @angular/core@14.3.0 @angular/cli@14.2.13 @angular-eslint/schematics@14.4.0 migrations applied:
+#   - @angular-eslint/schematics "Updates @angular-eslint to v14"
+#       -> package.json: @angular-eslint/* 14.4.0; migration wrote @typescript-eslint/* as ^5.36.2 and eslint as ^8.23.0,
+#          re-pinned by hand to exact 5.43.0 / 8.57.1 (save-exact=true, floating versions are forbidden)
+#   - @angular/cli "Remove 'defaultProject' option from workspace configuration"
+#       -> angular.json: "defaultProject": "lantern-sdk" removed (deprecated in CLI 13, removed in CLI 14; ng commands
+#          now take the project name, which the npm scripts already pass)
+#   - @angular/cli "Remove 'showCircularDependencies' option from browser and server builders" -> no change (library builder)
+#   - @angular/cli "Replace 'defaultCollection' option with 'schematicCollections'" -> no change (no defaultCollection set)
+#   - @angular/cli "Update Angular packages version prefix to '^' instead of '~'" -> no change (exact pins, save-exact=true)
+#   - @angular/cli "Remove 'package.json' files from library projects secondary entrypoints" -> no change (single entry point)
+#   - @angular/cli "Update TypeScript compilation target to 'ES2020'"
+#       -> tsconfig.json target es2017 -> es2020; projects/lantern-sdk/tsconfig.lib.json target es2015 -> es2020
+#          (the published fesm2015/fesm2020 bundles are still emitted by ng-packagr 14.2.2, see bundle-sizes.log)
+#   - @angular/core "entryComponents are no longer necessary" -> no matches in this source tree
+#   - @angular/core "pathMatch property of Routes is a strict union 'full'|'prefix'" -> no Routes declared in the library
+#   - @angular/core "Forms model classes accept a type parameter (typed forms)" -> no FormControl/FormGroup usage in the library
+#
+# Deprecations outstanding after the hop (none block the build; zero build warnings, see build.log; 21/21 specs, see test.log):
+#   - none reported by @angular/compiler-cli 14.3.0 or ng-packagr 14.2.2 for this source tree
+#   - Angular 14 is end of life (NORTHGATE-EOL-ANGULAR, XRAY-127400); intermediate wave position, 14 -> 15 follows
+#     once canopy-ui 4 / MDC is published (next repo in the wave)
+#   - Node 14.21.3 is end of life (NORTHGATE-EOL-NODE14, XRAY-127300); still inside the Angular 14 range
+#     (^14.15.0 || ^16.10.0), kept so the library builds on the same agents as business-web; bump to 16.20.2 planned for
+#     the 14 -> 15 hop (Angular 15 drops Node 14), see docs/adr/0002-angular-13-to-14.md
+#   - eslint 8.57.1 is the last eslint 8 ("no longer supported" npm WARN on install); flat-config eslint 9 needs
+#     angular-eslint >= 18, acceptable for the 14 line
+#   - transitive npm WARN deprecated on install (dev tree only, pulled in by @angular-devkit/build-angular 14.2.13 /
+#     karma / eslint): glob@7.2.3 / 8.0.3 / 8.1.0, rimraf@3.0.2, inflight@1.0.6, uuid@8.3.2, sourcemap-codec@1.4.8,
+#     @humanwhocodes/config-array@0.13.0, @babel/plugin-proposal-async-generator-functions@7.18.10; none is in the
+#     published package (dist/lantern-sdk has no dependencies beyond tslib)
+#   - webpack-dev-middleware@5.3.3 (CVE-2024-4068, XRAY-124800, fix 5.3.4) is pinned by @angular-devkit/build-angular 14.2.13;
+#     npm 6 has no overrides, dev-only, carried on KAN-13 (GIS risk acceptance) unchanged from the 12 -> 13 hop
+#
+# Removed from the repository in this hop:
+#   - angular.json "defaultProject" (see above)
+#
+# Not changed in this hop (deliberately):
+#   - RxJS stays 6.6.7 (retail-web is on RxJS 6; Angular 14 accepts ^6.5.3 || ^7.4.0)
+#   - zone.js stays 0.11.4 (Angular 14 peer ~0.11.4)
+#   - compilationMode "partial" in projects/lantern-sdk/tsconfig.lib.prod.json (partial Ivy since 3.0.0)

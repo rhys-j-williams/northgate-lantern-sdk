@@ -1,0 +1,15 @@
+# scratch retail-web (Lantern 4.0.0) ng serve --proxy-config proxy.conf.json on 4200 against estate-up.sh (in-process)
+GET / -> 200
+GET /api/v1/accounts via proxy (no token) -> 401 (bff-retail 4500 reached; direct /health -> 200)
+vendor.js SDK_VERSION stamps: SDK_VERSION = '4.0.0'
+vendor.js __ivy_ngcc__ references: 0
+
+## ng serve tail
+src_app_features_help_help_module_ts.js                                 | features-help-help-module               |  21.81 kB |
+src_app_features_errors_errors_module_ts.js                             | features-errors-errors-module           |  18.94 kB |
+common.js                                                               | common                                  |  16.92 kB |
+default-node_modules_ngrx_entity_fesm2015_ngrx-entity_mjs.js            | features-dashboard-dashboard-module     |  15.17 kB |
+src_app_features_disclosures_disclosures_module_ts.js                   | features-disclosures-disclosures-module |  14.16 kB |
+Build at: 2026-09-08T19:55:50.987Z - Hash: 9ab6f734b7b7baa0 - Time: 21149ms
+** Angular Live Development Server is listening on localhost:4200, open your browser on http://localhost:4200/ **
+✔ Compiled successfully.
