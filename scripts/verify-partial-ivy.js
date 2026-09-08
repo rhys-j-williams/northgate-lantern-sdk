@@ -6,7 +6,8 @@
  * (ɵɵdefine*) output that would tie the package to one Angular patch line, none of the View
  * Engine artefacts (*.metadata.json, "metadata" entry point) remain, and the published peer range
  * is the Angular major the build was compiled with (partial output is only supported on consumers
- * at or above that major).
+ * at or above that major). The package version must match the workspace version and the
+ * SDK_VERSION the service stamps on the vendor script and on every event.
  *
  * Runs against dist/ by default; pass a tarball path to inspect a packed .tgz instead (that is what
  * the release checklist does before `npm publish`).
@@ -21,6 +22,7 @@ const path = require('path');
 const { execFileSync } = require('child_process');
 
 const PACKAGE_NAME = '@northgate/lantern-sdk';
+const RXJS_PEER = '>=6.5.0 <7.0.0';
 const PARTIAL_MARKERS = [
   '\u0275\u0275ngDeclareDirective',
   '\u0275\u0275ngDeclareNgModule',
@@ -127,7 +129,7 @@ function verify(root) {
   }
   for (const field of ['module', 'es2020', 'esm2020', 'fesm2020', 'fesm2015', 'typings']) {
     if (!pkg[field]) {
-      problems.push(`package.json is missing the ${field} entry point ng-packagr 13 writes`);
+      problems.push(`package.json is missing the ${field} entry point ng-packagr writes`);
     }
   }
   if (!pkg.exports || !pkg.exports['.']) {
@@ -140,6 +142,18 @@ function verify(root) {
     if (peer !== expectedPeer) {
       problems.push(`${dep} peer range is "${peer}", expected "${expectedPeer}" (the Angular major this build was compiled with)`);
     }
+  }
+  const rxjsPeer = (pkg.peerDependencies || {}).rxjs || '';
+  if (rxjsPeer !== RXJS_PEER) {
+    problems.push(`rxjs peer range is "${rxjsPeer}", expected "${RXJS_PEER}" (consumers are on RxJS 6)`);
+  }
+  const workspaceVersion = workspacePackage().version;
+  if (pkg.version !== workspaceVersion) {
+    problems.push(`package version ${pkg.version} does not match workspace version ${workspaceVersion}`);
+  }
+  const versionStamp = `SDK_VERSION = '${pkg.version}'`;
+  if (!fesm.some((f) => fs.readFileSync(f, 'utf8').includes(versionStamp))) {
+    problems.push(`no fesm bundle stamps ${versionStamp}; update SDK_VERSION in lantern.service.ts`);
   }
 
   console.log(`verify-partial-ivy: ${pkg.name}@${pkg.version} at ${root}`);
@@ -157,9 +171,12 @@ function verify(root) {
   return 0;
 }
 
+function workspacePackage() {
+  return JSON.parse(fs.readFileSync(path.resolve(__dirname, '..', 'package.json'), 'utf8'));
+}
+
 function angularMajor() {
-  const workspace = JSON.parse(fs.readFileSync(path.resolve(__dirname, '..', 'package.json'), 'utf8'));
-  return Number(workspace.dependencies['@angular/core'].split('.')[0]);
+  return Number(workspacePackage().dependencies['@angular/core'].split('.')[0]);
 }
 
 function main() {
