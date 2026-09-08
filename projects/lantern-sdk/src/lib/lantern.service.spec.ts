@@ -86,4 +86,27 @@ describe('LanternService', () => {
     const svc = setup();
     expect(svc.sessionId()).toBe('vendor-session-1');
   });
+
+  it('resumes a stored session that is still inside the 30 minute idle window', () => {
+    sessionStorage.setItem('mtb.lantern.session', `las_${'a'.repeat(32)}|${Date.now() - 60 * 1000}`);
+    const svc = setup();
+    expect(svc.sessionId()).toBe(`las_${'a'.repeat(32)}`);
+  });
+
+  it('discards a stored session that has been idle for more than 30 minutes', () => {
+    sessionStorage.setItem('mtb.lantern.session', `las_${'b'.repeat(32)}|${Date.now() - 31 * 60 * 1000}`);
+    const svc = setup();
+    const id = svc.sessionId();
+    expect(id).toMatch(/^las_[0-9a-f]{32}$/);
+    expect(id).not.toBe(`las_${'b'.repeat(32)}`);
+  });
+
+  it('exposes the resolved config and writes debug output only when debug is on', () => {
+    const debugSpy = spyOn(console, 'debug');
+    const svc = setup({ writeKey: 'wk_test', appName: 'spec', debug: true });
+    expect(svc.config.appName).toBe('spec');
+    expect(svc.config.debug).toBeTrue();
+    svc.track('debug.event');
+    expect(debugSpy).toHaveBeenCalledWith('[lantern-sdk] track', jasmine.any(Array));
+  });
 });
