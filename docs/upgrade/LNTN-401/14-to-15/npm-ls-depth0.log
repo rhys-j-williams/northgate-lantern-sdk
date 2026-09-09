@@ -1,0 +1,35 @@
+lantern-sdk-workspace@5.0.0 /home/ubuntu/repos/northgate-lantern-sdk
+├── @angular-devkit/build-angular@15.2.11
+├── @angular-eslint/builder@15.2.1
+├── @angular-eslint/eslint-plugin-template@15.2.1
+├── @angular-eslint/eslint-plugin@15.2.1
+├── @angular-eslint/schematics@15.2.1
+├── @angular-eslint/template-parser@15.2.1
+├── @angular/animations@15.2.10
+├── @angular/cli@15.2.11
+├── @angular/common@15.2.10
+├── @angular/compiler-cli@15.2.10
+├── @angular/compiler@15.2.10
+├── @angular/core@15.2.10
+├── @angular/forms@15.2.10
+├── @angular/platform-browser-dynamic@15.2.10
+├── @angular/platform-browser@15.2.10
+├── @angular/router@15.2.10
+├── @types/jasmine@3.8.2
+├── @types/node@16.18.11
+├── @typescript-eslint/eslint-plugin@5.43.0
+├── @typescript-eslint/parser@5.43.0
+├── eslint@8.57.1
+├── jasmine-core@3.8.0
+├── karma-chrome-launcher@3.1.1
+├── karma-coverage@2.0.3
+├── karma-jasmine-html-reporter@1.7.0
+├── karma-jasmine@4.0.2
+├── karma@6.3.20
+├── ng-packagr@15.2.2
+├── rxjs@7.8.1
+├── tslib@2.3.1
+├── typescript@4.9.5
+└── zone.js@0.12.0
+
+exit=0

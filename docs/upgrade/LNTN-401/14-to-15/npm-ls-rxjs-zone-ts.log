@@ -1,0 +1,48 @@
+lantern-sdk-workspace@5.0.0 /home/ubuntu/repos/northgate-lantern-sdk
+├─┬ @angular-devkit/build-angular@15.2.11
+│ ├─┬ @angular-devkit/architect@0.1502.11
+│ │ └── rxjs@6.6.7
+│ ├─┬ @angular-devkit/build-webpack@0.1502.11
+│ │ └── rxjs@6.6.7
+│ ├─┬ @angular-devkit/core@15.2.11
+│ │ └── rxjs@6.6.7
+│ ├─┬ @ngtools/webpack@15.2.11
+│ │ └── typescript@4.9.5 deduped
+│ ├─┬ inquirer@8.2.4
+│ │ └── rxjs@7.8.1 deduped
+│ ├── rxjs@6.6.7
+│ └── typescript@4.9.5 deduped
+├─┬ @angular-eslint/builder@15.2.1
+│ └── typescript@4.9.5 deduped
+├─┬ @angular-eslint/eslint-plugin-template@15.2.1
+│ ├─┬ @angular-eslint/utils@15.2.1
+│ │ └── typescript@4.9.5 deduped
+│ └── typescript@4.9.5 deduped
+├─┬ @angular-eslint/eslint-plugin@15.2.1
+│ └── typescript@4.9.5 deduped
+├─┬ @angular-eslint/template-parser@15.2.1
+│ └── typescript@4.9.5 deduped
+├─┬ @angular/cli@15.2.11
+│ └─┬ @angular-devkit/schematics@15.2.11
+│   └── rxjs@6.6.7
+├─┬ @angular/common@15.2.10
+│ └── rxjs@7.8.1 deduped
+├─┬ @angular/compiler-cli@15.2.10
+│ └── typescript@4.9.5 deduped
+├─┬ @angular/core@15.2.10
+│ ├── rxjs@7.8.1 deduped
+│ └── zone.js@0.12.0 deduped
+├─┬ @angular/forms@15.2.10
+│ └── rxjs@7.8.1 deduped
+├─┬ @angular/router@15.2.10
+│ └── rxjs@7.8.1 deduped
+├─┬ @typescript-eslint/eslint-plugin@5.43.0
+│ └─┬ tsutils@3.21.0
+│   └── typescript@4.9.5 deduped
+├─┬ ng-packagr@15.2.2
+│ ├── rxjs@7.8.1 deduped
+│ └── typescript@4.9.5 deduped
+├── rxjs@7.8.1
+├── typescript@4.9.5
+└── zone.js@0.12.0
+

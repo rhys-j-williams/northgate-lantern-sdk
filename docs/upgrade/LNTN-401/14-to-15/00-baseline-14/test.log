@@ -1,37 +1,44 @@
 
-> lantern-sdk-workspace@4.0.0 test /home/ubuntu/repos/northgate-lantern-sdk
-> ng test lantern-sdk --watch=false --browsers=ChromeHeadlessCI
+> lantern-sdk-workspace@4.0.0 test /home/ubuntu/lantern-baseline-wt
+> ng test lantern-sdk --watch=false --browsers=ChromeHeadlessCI "--code-coverage"
 
 - Generating browser application bundles (phase: setup)...
 ✔ Browser application bundle generation complete.
-09 09 2026 20:13:46.782:INFO [karma-server]: Karma v6.3.20 server started at http://localhost:9877/
-09 09 2026 20:13:46.783:INFO [launcher]: Launching browsers ChromeHeadlessCI with concurrency unlimited
-09 09 2026 20:13:46.787:INFO [launcher]: Starting browser ChromeHeadless
-09 09 2026 20:13:47.081:INFO [Chrome Headless 137.0.0.0 (Linux 0.0.0)]: Connected on socket S1i2iuTf-HBg7DZLAAAA with id 52203846
+09 09 2026 20:20:54.686:INFO [karma-server]: Karma v6.3.20 server started at http://localhost:9877/
+09 09 2026 20:20:54.687:INFO [launcher]: Launching browsers ChromeHeadlessCI with concurrency unlimited
+09 09 2026 20:20:54.691:INFO [launcher]: Starting browser ChromeHeadless
+09 09 2026 20:20:54.942:INFO [Chrome Headless 137.0.0.0 (Linux 0.0.0)]: Connected on socket YVhHj8tpXOFh-JgxAAAA with id 28647367
 Chrome Headless 137.0.0.0 (Linux 0.0.0): Executed 0 of 21 SUCCESS (0 secs / 0 secs)
 [1A[2KChrome Headless 137.0.0.0 (Linux 0.0.0): Executed 1 of 21 SUCCESS (0 secs / 0.003 secs)
-[1A[2KChrome Headless 137.0.0.0 (Linux 0.0.0): Executed 2 of 21 SUCCESS (0 secs / 0.024 secs)
-[1A[2KChrome Headless 137.0.0.0 (Linux 0.0.0): Executed 3 of 21 SUCCESS (0 secs / 0.027 secs)
-[1A[2KChrome Headless 137.0.0.0 (Linux 0.0.0): Executed 4 of 21 SUCCESS (0 secs / 0.03 secs)
-[1A[2KChrome Headless 137.0.0.0 (Linux 0.0.0): Executed 5 of 21 SUCCESS (0 secs / 0.032 secs)
-[1A[2KChrome Headless 137.0.0.0 (Linux 0.0.0): Executed 6 of 21 SUCCESS (0 secs / 0.033 secs)
-[1A[2KChrome Headless 137.0.0.0 (Linux 0.0.0): Executed 7 of 21 SUCCESS (0 secs / 0.061 secs)
-[1A[2KChrome Headless 137.0.0.0 (Linux 0.0.0): Executed 8 of 21 SUCCESS (0 secs / 0.064 secs)
-[1A[2KChrome Headless 137.0.0.0 (Linux 0.0.0): Executed 9 of 21 SUCCESS (0 secs / 0.067 secs)
-[1A[2KChrome Headless 137.0.0.0 (Linux 0.0.0): Executed 10 of 21 SUCCESS (0 secs / 0.069 secs)
-[1A[2KChrome Headless 137.0.0.0 (Linux 0.0.0): Executed 11 of 21 SUCCESS (0 secs / 0.072 secs)
-[1A[2KChrome Headless 137.0.0.0 (Linux 0.0.0): Executed 12 of 21 SUCCESS (0 secs / 0.072 secs)
-[1A[2KChrome Headless 137.0.0.0 (Linux 0.0.0): Executed 13 of 21 SUCCESS (0 secs / 0.079 secs)
-[1A[2KChrome Headless 137.0.0.0 (Linux 0.0.0): Executed 14 of 21 SUCCESS (0 secs / 0.08 secs)
-[1A[2KChrome Headless 137.0.0.0 (Linux 0.0.0): Executed 15 of 21 SUCCESS (0 secs / 0.081 secs)
-[1A[2KChrome Headless 137.0.0.0 (Linux 0.0.0): Executed 16 of 21 SUCCESS (0 secs / 0.083 secs)
-[1A[2KChrome Headless 137.0.0.0 (Linux 0.0.0): Executed 17 of 21 SUCCESS (0 secs / 0.085 secs)
-[1A[2KChrome Headless 137.0.0.0 (Linux 0.0.0): Executed 18 of 21 SUCCESS (0 secs / 0.086 secs)
-[1A[2KChrome Headless 137.0.0.0 (Linux 0.0.0): Executed 19 of 21 SUCCESS (0 secs / 0.086 secs)
-[1A[2KChrome Headless 137.0.0.0 (Linux 0.0.0): Executed 20 of 21 SUCCESS (0 secs / 0.087 secs)
-[1A[2KChrome Headless 137.0.0.0 (Linux 0.0.0): Executed 21 of 21 SUCCESS (0 secs / 0.089 secs)
-[1A[2KChrome Headless 137.0.0.0 (Linux 0.0.0): Executed 21 of 21 SUCCESS (0.104 secs / 0.089 secs)
+[1A[2KChrome Headless 137.0.0.0 (Linux 0.0.0): Executed 2 of 21 SUCCESS (0 secs / 0.027 secs)
+[1A[2KChrome Headless 137.0.0.0 (Linux 0.0.0): Executed 3 of 21 SUCCESS (0 secs / 0.03 secs)
+[1A[2KChrome Headless 137.0.0.0 (Linux 0.0.0): Executed 4 of 21 SUCCESS (0 secs / 0.033 secs)
+[1A[2KChrome Headless 137.0.0.0 (Linux 0.0.0): Executed 5 of 21 SUCCESS (0 secs / 0.034 secs)
+[1A[2KChrome Headless 137.0.0.0 (Linux 0.0.0): Executed 6 of 21 SUCCESS (0 secs / 0.035 secs)
+[1A[2KChrome Headless 137.0.0.0 (Linux 0.0.0): Executed 7 of 21 SUCCESS (0 secs / 0.047 secs)
+[1A[2KChrome Headless 137.0.0.0 (Linux 0.0.0): Executed 8 of 21 SUCCESS (0 secs / 0.049 secs)
+[1A[2KChrome Headless 137.0.0.0 (Linux 0.0.0): Executed 9 of 21 SUCCESS (0 secs / 0.05 secs)
+[1A[2KChrome Headless 137.0.0.0 (Linux 0.0.0): Executed 10 of 21 SUCCESS (0 secs / 0.051 secs)
+[1A[2KChrome Headless 137.0.0.0 (Linux 0.0.0): Executed 11 of 21 SUCCESS (0 secs / 0.053 secs)
+[1A[2KChrome Headless 137.0.0.0 (Linux 0.0.0): Executed 12 of 21 SUCCESS (0 secs / 0.055 secs)
+[1A[2KChrome Headless 137.0.0.0 (Linux 0.0.0): Executed 13 of 21 SUCCESS (0 secs / 0.063 secs)
+[1A[2KChrome Headless 137.0.0.0 (Linux 0.0.0): Executed 14 of 21 SUCCESS (0 secs / 0.064 secs)
+[1A[2KChrome Headless 137.0.0.0 (Linux 0.0.0): Executed 15 of 21 SUCCESS (0 secs / 0.065 secs)
+[1A[2KChrome Headless 137.0.0.0 (Linux 0.0.0): Executed 16 of 21 SUCCESS (0 secs / 0.067 secs)
+[1A[2KChrome Headless 137.0.0.0 (Linux 0.0.0): Executed 17 of 21 SUCCESS (0 secs / 0.069 secs)
+[1A[2KChrome Headless 137.0.0.0 (Linux 0.0.0): Executed 18 of 21 SUCCESS (0 secs / 0.07 secs)
+[1A[2KChrome Headless 137.0.0.0 (Linux 0.0.0): Executed 19 of 21 SUCCESS (0 secs / 0.071 secs)
+[1A[2KChrome Headless 137.0.0.0 (Linux 0.0.0): Executed 20 of 21 SUCCESS (0 secs / 0.072 secs)
+[1A[2KChrome Headless 137.0.0.0 (Linux 0.0.0): Executed 21 of 21 SUCCESS (0 secs / 0.073 secs)
+[1A[2KChrome Headless 137.0.0.0 (Linux 0.0.0): Executed 21 of 21 SUCCESS (0.087 secs / 0.073 secs)
 TOTAL: 21 SUCCESS
+
+=============================== Coverage summary ===============================
+Statements   : 97.43% ( 152/156 )
+Branches     : 87.85% ( 94/107 )
+Functions    : 100% ( 41/41 )
+Lines        : 97.33% ( 146/150 )
+================================================================================
 ✔ Browser application bundle generation complete.
 ✔ Browser application bundle generation complete.
 exit=0

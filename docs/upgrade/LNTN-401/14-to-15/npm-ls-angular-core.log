@@ -1,0 +1,17 @@
+lantern-sdk-workspace@5.0.0 /home/ubuntu/repos/northgate-lantern-sdk
+├─┬ @angular/animations@15.2.10
+│ └── @angular/core@15.2.10 deduped
+├─┬ @angular/common@15.2.10
+│ └── @angular/core@15.2.10 deduped
+├─┬ @angular/compiler@15.2.10
+│ └── @angular/core@15.2.10 deduped
+├── @angular/core@15.2.10
+├─┬ @angular/forms@15.2.10
+│ └── @angular/core@15.2.10 deduped
+├─┬ @angular/platform-browser-dynamic@15.2.10
+│ └── @angular/core@15.2.10 deduped
+├─┬ @angular/platform-browser@15.2.10
+│ └── @angular/core@15.2.10 deduped
+└─┬ @angular/router@15.2.10
+  └── @angular/core@15.2.10 deduped
+

@@ -1,0 +1,10 @@
+
+> lantern-sdk-workspace@5.0.0 lint
+> ng lint lantern-sdk
+
+
+Linting "lantern-sdk"...
+
+All files pass linting.
+
+exit=0
