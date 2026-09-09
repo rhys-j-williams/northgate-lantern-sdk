@@ -1,0 +1,39 @@
+
+> nice-napi@1.0.2 install /home/ubuntu/repos/northgate-lantern-sdk/node_modules/nice-napi
+> node-gyp-build
+
+
+> esbuild@0.14.22 postinstall /home/ubuntu/repos/northgate-lantern-sdk/node_modules/esbuild
+> node install.js
+
+
+> core-js@3.20.3 postinstall /home/ubuntu/repos/northgate-lantern-sdk/node_modules/core-js
+> node -e "try{require('./postinstall')}catch(e){}"
+
+[96mThank you for using core-js ([94m https://github.com/zloirock/core-js [96m) for polyfilling JavaScript standard library![0m
+
+[96mThe project needs your help! Please consider supporting of core-js:[0m
+[96m>[94m https://opencollective.com/core-js [0m
+[96m>[94m https://patreon.com/zloirock [0m
+[96m>[94m https://paypal.me/zloirock [0m
+[96m>[94m bitcoin: bc1qlea7544qtsmj2rayg0lthvza9fau63ux0fstcz [0m
+
+[96mAlso, the author of core-js ([94m https://github.com/zloirock [96m) is looking for a good job -)[0m
+
+
+> @angular/cli@13.3.11 postinstall /home/ubuntu/repos/northgate-lantern-sdk/node_modules/@angular/cli
+> node ./bin/postinstall/script.js
+
+
+> core-js-pure@3.50.0 postinstall /home/ubuntu/repos/northgate-lantern-sdk/node_modules/core-js-pure
+> node -e "try{require('./postinstall')}catch(e){}"
+
+
+> @parcel/watcher@2.0.4 install /home/ubuntu/repos/northgate-lantern-sdk/node_modules/@parcel/watcher
+> node-gyp-build
+
+
+> nx@15.9.3 postinstall /home/ubuntu/repos/northgate-lantern-sdk/node_modules/@nrwl/cli/node_modules/nx
+> node ./bin/compute-project-graph
+
+added 1147 packages in 10.19s

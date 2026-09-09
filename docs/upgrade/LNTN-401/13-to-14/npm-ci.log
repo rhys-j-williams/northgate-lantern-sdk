@@ -1,0 +1,10 @@
+
+> nice-napi@1.0.2 install /home/ubuntu/repos/northgate-lantern-sdk/node_modules/nice-napi
+> node-gyp-build
+
+
+> esbuild@0.15.5 postinstall /home/ubuntu/repos/northgate-lantern-sdk/node_modules/esbuild
+> node install.js
+
+added 1081 packages in 6.113s
+exit=0

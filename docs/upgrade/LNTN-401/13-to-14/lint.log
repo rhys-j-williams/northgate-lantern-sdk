@@ -1,0 +1,10 @@
+
+> lantern-sdk-workspace@4.0.0 lint /home/ubuntu/repos/northgate-lantern-sdk
+> ng lint lantern-sdk
+
+
+Linting "lantern-sdk"...
+
+All files pass linting.
+
+exit=0

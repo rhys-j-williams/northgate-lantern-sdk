@@ -1,0 +1,13 @@
+INFO: Scanner configuration file: sonar-project.properties
+INFO: SonarScanner 4.8.1.3023-northgate
+INFO: Analyzing on SonarQube server 9.9.4 LTS (https://sonar.northgate.internal, local mode)
+INFO: Project key: northgate:lantern-sdk
+INFO: Base dir: /home/ubuntu/repos/northgate-lantern-sdk
+INFO: 10 source files, 0 test files indexed; 438 lines of code
+INFO: Coverage imported from coverage/lantern-sdk/lcov.info (lcov): 97.3% lines
+INFO: No lint report found; no external issues imported
+INFO: Bugs 0, Vulnerabilities 0, Code smells 0, Duplication 0%
+INFO: Analysis report generated in 7ms, dir .sonar-reports
+INFO: ANALYSIS SUCCESSFUL, you can find the results at: https://sonar.northgate.internal/dashboard?id=northgate%3Alantern-sdk
+INFO: QUALITY GATE STATUS: PASSED - View details on https://sonar.northgate.internal/dashboard?id=northgate%3Alantern-sdk
+exit=0
