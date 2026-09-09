@@ -24,7 +24,7 @@ describe('LanternModule', () => {
     });
     TestBed.inject(LanternModule);
     expect(vendor.load).toHaveBeenCalledWith('wk_test', jasmine.objectContaining({}));
-    expect(document.querySelectorAll('script[data-lantern-sdk="4.0.0"]').length).toBe(1);
+    expect(document.querySelectorAll('script[data-lantern-sdk="5.0.0"]').length).toBe(1);
     expect(TestBed.inject(LanternService).enabled).toBeTrue();
   });
 

@@ -1,0 +1,31 @@
+$ npm view @northgate/lantern-sdk@5.0.0 --registry http://localhost:4873
+
+@northgate/lantern-sdk@5.0.0 | UNLICENSED | deps: 1 | versions: 1
+Angular wrapper for the Lumenview Lantern analytics vendor script (LanternModule.forRoot, LanternService, router page tracking, lanternTrack directive, session header interceptor). Owned by Digital Analytics Enablement.
+https://github.com/rhys-j-williams/northgate-lantern-sdk#readme
+
+dist
+.tarball: http://localhost:4873/@northgate/lantern-sdk/-/lantern-sdk-5.0.0.tgz
+.shasum: 9e836b000bcdc2775ed534ee24e776cbb3823605
+.integrity: sha512-97Y6z3Av7Yxw6j0KaYGbDhS3r+1fx3UGDpgZWqx2gxA/TpKhXTzQl73NWhDS88u5vt/fw3LRUfBP4Cz96QBHpg==
+
+dependencies:
+tslib: 2.3.1
+
+dist-tags:
+latest: 5.0.0
+
+published just now
+
+$ npm view @northgate/lantern-sdk versions --registry http://localhost:4873
+5.0.0
+
+$ npm view @northgate/lantern-sdk@5.0.0 peerDependencies dist.shasum dist.integrity --registry http://localhost:4873
+peerDependencies = {
+  '@angular/common': '^15.0.0',
+  '@angular/core': '^15.0.0',
+  '@angular/router': '^15.0.0',
+  rxjs: '^7.5.0'
+}
+dist.shasum = '9e836b000bcdc2775ed534ee24e776cbb3823605'
+dist.integrity = 'sha512-97Y6z3Av7Yxw6j0KaYGbDhS3r+1fx3UGDpgZWqx2gxA/TpKhXTzQl73NWhDS88u5vt/fw3LRUfBP4Cz96QBHpg=='

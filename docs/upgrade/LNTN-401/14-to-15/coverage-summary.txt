@@ -1,0 +1,7 @@
+TOTAL: 21 SUCCESS
+Branches     : 87.85% ( 94/107 )
+Functions    : 100% ( 41/41 )
+Lines        : 97.33% ( 146/150 )
+================================================================================
+✔ Browser application bundle generation complete.
+exit=0

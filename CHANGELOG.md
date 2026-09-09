@@ -2,6 +2,40 @@
 
 DAE keeps this by hand. Ticket keys are LNTN unless stated.
 
+## 5.0.0 - unreleased (2026.10.4 train proposed)
+
+Semver major: Angular 14 -> 15 and Node 14 -> 16. Stage 2 of the estate Angular 14 -> 15 wave
+(LNTN-401 continuation, Jira mirror KAN-23; Stage 1 is Canopy 4.0.0 / CNPY-2140, Stage 3 is
+retail-web pinning Canopy 4.0.0 and Lantern 5.0.0 together under MOL-4471). ADR
+`docs/adr/0003-angular-14-to-15.md`, evidence `docs/upgrade/LNTN-401/14-to-15/`. Public API, config
+keys, header name and the GIS-1471 masking rules are unchanged; no migration steps in application
+code.
+
+- BREAKING 401: peer range is `@angular/{common,core,router} ^15.0.0`. Applications on Angular 14
+  stay on 4.0.0. retail-web (Angular 14.3.0) is below the range: the strict-peer install fails with
+  `ERESOLVE` as expected (`docs/upgrade/LNTN-401/14-to-15/CONSUMERS.md`); retail-web pins 5.0.0 in
+  its own Angular 15 change (MOL-4471). The candidate is verified PASS in an Angular 15.2 host.
+- BREAKING 401: peer range is `rxjs ^7.5.0` (was `>=6.5.0 <7.0.0`). No RxJS 6 consumer remains in
+  the estate (retail-web is on 7.5.7).
+- BREAKING 401: build platform is Node **16.20.2** / npm **8.19.4** (`.nvmrc`, `engines`);
+  `package-lock.json` is lockfileVersion 2. Consumers are unaffected (the package is plain
+  JavaScript). The `lantern-sdk-release` job must run with `NODE_VERSION` 16.20.2 on the
+  `nodejs16-rhel8` agent without the former `nvm use 14` override.
+- SECURITY SUPPORT (GIS-STD-022 s3): **4.0.0 (Angular 14 line) stays in security support until
+  retail-web has moved to 5.0.0 or for 90 days after the 5.0.0 publish, whichever is first.**
+  Patches for that line are cut from the 4.0.0 release tag (`lantern-sdk-v4.0.0`, the name
+  `scripts/publish.sh` prints) as 4.0.x. 3.0.0 and 2.4.1 are unsupported lines that remain
+  published.
+- 401: Angular 15.2.10, CLI 15.2.11, ng-packagr 15.2.2, TypeScript 4.9.5, zone.js 0.12.0, RxJS
+  7.8.1 (workspace), angular-eslint 15.2.1. Output still Ivy partial compilation (APF 15, same
+  layout as 4.0.0). `@types/node` stays 16.18.11.
+- 401: TypeScript compilation target ES2022 with `useDefineForClassFields: false` (CLI 15
+  migration); Karma `test.ts` no longer uses `require.context` (CLI 15 migration).
+- 401: `verify:partial-ivy` expects the caret peer forms (`^<major>.0.0`, `rxjs ^7.5.0`).
+- 401: `SDK_VERSION` reported as `@northgate/lantern-sdk@5.0.0` in the vendor context.
+- Not in this release: Angular 16 (blocked on the vendor Ivy build LNTN-140 / KAN-24), Node 18,
+  RxJS 8, ESLint 9, a Karma replacement.
+
 ## 4.0.0 - unreleased (2026.10.2 train)
 
 Semver major: Angular 13 -> 14. Second and last of the two LNTN-401 catch-up hops; Lantern is now

@@ -1,0 +1,45 @@
+$ npx ng build --configuration production
+- Generating browser application bundles (phase: setup)...
+✔ Browser application bundle generation complete.
+✔ Browser application bundle generation complete.
+
+Error: node_modules/@types/node/web-globals/streams.d.ts:10:9 - error TS2502: 'CompressionStream' is referenced directly or indirectly in its own type annotation.
+
+10     var CompressionStream: typeof globalThis extends {
+           ~~~~~~~~~~~~~~~~~
+
+
+Error: node_modules/@types/node/web-globals/streams.d.ts:17:9 - error TS2502: 'DecompressionStream' is referenced directly or indirectly in its own type annotation.
+
+17     var DecompressionStream: typeof globalThis extends {
+           ~~~~~~~~~~~~~~~~~~~
+
+
+
+exit=1
+
+$ grep -c "'5.0.0'" dist/lantern-host15/main.*.js  (SDK_VERSION stamped)
+grep: dist/lantern-host15/main.*.js: No such file or directory
+
+$ installed package
+{
+  "version": "5.0.0",
+  "peerDependencies": {
+    "@angular/common": "^15.0.0",
+    "@angular/core": "^15.0.0",
+    "@angular/router": "^15.0.0",
+    "rxjs": "^7.5.0"
+  },
+  "module": "fesm2015/northgate-lantern-sdk.mjs",
+  "typings": "index.d.ts",
+  "sideEffects": false
+}
+esm2020
+fesm2015
+fesm2020
+index.d.ts
+lib
+node_modules
+package.json
+public-api.d.ts
+metadata.json files: 0; ngcc markers: 0; partial markers (ɵɵngDeclare): 1

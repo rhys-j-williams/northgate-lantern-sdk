@@ -5,7 +5,7 @@ import { installQueueStub, LanternProperties, LanternVendorApi, LanternWindow } 
 
 const SESSION_STORAGE_KEY = 'mtb.lantern.session';
 const SESSION_IDLE_MS = 30 * 60 * 1000;
-const SDK_VERSION = '4.0.0';
+const SDK_VERSION = '5.0.0';
 
 /**
  * Thin wrapper over window.Lantern. Everything goes through here so the application code never

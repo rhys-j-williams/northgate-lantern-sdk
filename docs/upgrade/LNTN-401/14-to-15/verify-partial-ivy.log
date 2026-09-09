@@ -1,0 +1,10 @@
+
+> lantern-sdk-workspace@5.0.0 verify:partial-ivy
+> node scripts/verify-partial-ivy.js
+
+verify-partial-ivy: @northgate/lantern-sdk@5.0.0 at /home/ubuntu/repos/northgate-lantern-sdk/dist/lantern-sdk
+  metadata files : 0
+  js/mjs files   : 11 (2 fesm bundles)
+  d.ts files     : 9
+  OK: Ivy partial compilation, no View Engine output
+exit=0

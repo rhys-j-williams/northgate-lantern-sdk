@@ -1,0 +1,11 @@
+Checkmarx CLI 2.3.7-northgate (Northgate build)
+Project: northgate-lantern-sdk  Preset: Northgate-High-And-Medium rev 41
+Scanned 180 files, 19414 lines in 35 ms
+Scan id: cx-b859831e0e0c
+
+  Critical 0  High 0  Medium 0  Low 0  Info 5  Suppressed 0
+
+
+Reports written to .cx-reports
+Quality gate PASSED
+exit=0

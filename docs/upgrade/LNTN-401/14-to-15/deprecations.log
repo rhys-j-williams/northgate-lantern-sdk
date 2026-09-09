@@ -1,0 +1,60 @@
+# LNTN-401 Angular 14 -> 15 deprecation log (northgate-lantern-sdk)
+# Source: ng-update-preview.log, ng-update-core-cli.log, build.log, test.log, npm-install-lockfile.log, npm-ci.log in this directory.
+#
+# ng update @angular/core@15.2.10 @angular/cli@15.2.11 @angular-eslint/schematics@15.2.1 migrations applied:
+#   - @angular-eslint/schematics "Updates @angular-eslint to v15"
+#       -> package.json: @angular-eslint/* 15.2.1; migration wrote @typescript-eslint/* and eslint as caret ranges,
+#          re-pinned by hand to exact 5.43.0 / 8.57.1 (save-exact=true, floating versions are forbidden)
+#       -> angular.json: "schematics" block added with setParserOptionsProject=true for
+#          @angular-eslint/schematics:application and :library (affects future `ng generate` only, no builder change)
+#   - @angular/cli "Remove Browserslist configuration files that matches the Angular CLI default configuration" -> no change
+#   - @angular/cli "Remove exported @angular/platform-server renderModule method" -> no change (no SSR in the library)
+#   - @angular/cli "Remove no longer needed require calls in Karma builder main file"
+#       -> projects/lantern-sdk/src/test.ts: the `declare const require` block and `context.keys().map(context)`
+#          spec discovery removed; the Karma builder 15 discovers *.spec.ts itself. Same 21 specs execute (test.log)
+#   - @angular/cli "Update TypeScript compiler target and set useDefineForClassFields"
+#       -> tsconfig.json target es2020 -> ES2022, useDefineForClassFields=false;
+#          projects/lantern-sdk/tsconfig.lib.json: redundant "target": "es2020" removed (inherits the workspace value).
+#          Published bundles are still fesm2015 / fesm2020 / esm2020 (ng-packagr 15.2.2, APF 15), see bundle-sizes.log
+#   - @angular/cli "Remove options from angular.json that are no longer supported by the official builders" -> no change
+#   - @angular/core "relativeLinkResolution config parameter of the Router is removed" -> no Routes declared in the library
+#   - @angular/core "RouterLinkWithHref references replaced with RouterLink" -> no matches in this source tree
+#
+# Deprecations outstanding after the hop (none block the build; zero build warnings, see build.log; 21/21 specs, see test.log):
+#   - none reported by @angular/compiler-cli 15.2.10 or ng-packagr 15.2.2 for this source tree
+#   - Angular 15 is out of long term support (NORTHGATE-EOL-ANGULAR, XRAY-127401, now Medium instead of the 14-line High
+#     XRAY-127400); intermediate wave position, Lantern 15 -> 16 is BLOCKED on the vendor Ivy build LNTN-140 / KAN-24
+#     (Angular 16 drops the View Engine / ngcc compatibility path), see REPORT.md "Next-hop constraints"
+#   - Node 16.20.2 is end of life (NORTHGATE-EOL-NODE16, XRAY-127310, Medium; CVE-2023-39333 XRAY-127200, Medium). It is the
+#     supported estate agent (nodejs16-rhel8, platform-tooling README) and the Angular 15 range is
+#     ^14.20.0 || ^16.13.0 || ^18.10.0; Node 18 is a separate platform decision, not this hop
+#   - eslint 8.57.1 is the last eslint 8 ("no longer supported" npm WARN on install); flat-config eslint 9 needs
+#     angular-eslint >= 18, acceptable for the 15 line
+#   - karma 6.3.20 (NORTHGATE-EOL-KARMA XRAY-134600 Low; CVE-2023-8265 XRAY-125300 Medium, fix 6.4.3) is unchanged from the
+#     14 baseline; moving the test runner is not part of the framework hop
+#   - transitive npm WARN deprecated on install (dev tree only, pulled in by @angular-devkit/build-angular 15.2.11 /
+#     karma / eslint / npm 8's own dependency tree): the @babel/plugin-proposal-* set (merged into the standard, replaced by
+#     @babel/plugin-transform-*), @humanwhocodes/config-array@0.13.0, @humanwhocodes/object-schema@2.0.3,
+#     @npmcli/move-file@2.0.1, abab@2.0.6, acorn-import-assertions@1.9.0, are-we-there-yet@3.0.1, gauge@4.0.4, glob@7.2.3 /
+#     8.1.0 / 10.5.0, inflight@1.0.6, npmlog@6.0.2, read-package-json@6.0.4, rimraf@3.0.2, tar@6.2.1, uuid@8.3.2; none is in the
+#     published package (dist/lantern-sdk has no dependencies beyond tslib)
+#   - webpack-dev-middleware@5.3.3 (CVE-2024-4068, XRAY-124800) is GONE from the Xray High list with build-angular 15.2.11;
+#     the Xray Medium findings that remain (esbuild@0.17.8, webpack@5.76.1, @babel/runtime@7.20.13) are dev only and pinned
+#     by @angular-devkit/build-angular 15.2.11, carried on KAN-13 (GIS risk acceptance pattern)
+#   - rxjs@6.6.7 still appears in the dev tree (NORTHGATE-EOL-RXJS XRAY-127500 Low) through @angular-devkit/* 15.2.11,
+#     which pins rxjs 6.6.7 internally; the workspace and the published peer are RxJS 7 (7.8.1 / ^7.5.0)
+#
+# Removed from the repository in this hop:
+#   - projects/lantern-sdk/src/test.ts require.context spec discovery (see above)
+#   - projects/lantern-sdk/tsconfig.lib.json "target" override (see above)
+#
+# Changed in this hop (deliberately, see docs/adr/0003-angular-14-to-15.md):
+#   - Node 14.21.3 -> 16.20.2 (.nvmrc, engines.node); npm 6.14.18 -> 8.19.4 (engines.npm); package-lock.json lockfileVersion 1 -> 2
+#   - RxJS 6.6.7 -> 7.8.1 in the workspace; published peer rxjs >=6.5.0 <7.0.0 -> ^7.5.0 (retail-web is on RxJS 7.5.7)
+#   - zone.js 0.11.4 -> 0.12.0 (Angular 15 peer ~0.11.4 || ~0.12.0 || ~0.13.0; dev/test only, not shipped)
+#   - Angular peer range >=14.0.0 <15.0.0 -> ^15.0.0 (caret, the form the estate playbook uses for the 15 wave)
+#
+# Not changed in this hop (deliberately):
+#   - compilationMode "partial" in projects/lantern-sdk/tsconfig.lib.prod.json (partial Ivy since 3.0.0)
+#   - the public API, the X-Analytics-Session header name and every GIS-1471 masking rule
+#   - @types/node 16.18.11 (TS 4.9 cannot parse newer @types/node; see README)

@@ -1,0 +1,44 @@
+
+> lantern-sdk-workspace@5.0.0 test
+> ng test lantern-sdk --watch=false --browsers=ChromeHeadlessCI --code-coverage
+
+- Generating browser application bundles (phase: setup)...
+✔ Browser application bundle generation complete.
+09 09 2026 20:20:51.789:INFO [karma-server]: Karma v6.3.20 server started at http://localhost:9878/
+09 09 2026 20:20:51.790:INFO [launcher]: Launching browsers ChromeHeadlessCI with concurrency unlimited
+09 09 2026 20:20:51.793:INFO [launcher]: Starting browser ChromeHeadless
+09 09 2026 20:20:52.185:INFO [Chrome Headless 137.0.0.0 (Linux 0.0.0)]: Connected on socket eLmmr1YF7hNUAshOAAAA with id 5821613
+Chrome Headless 137.0.0.0 (Linux 0.0.0): Executed 0 of 21 SUCCESS (0 secs / 0 secs)
+[1A[2KChrome Headless 137.0.0.0 (Linux 0.0.0): Executed 1 of 21 SUCCESS (0 secs / 0.009 secs)
+[1A[2KChrome Headless 137.0.0.0 (Linux 0.0.0): Executed 2 of 21 SUCCESS (0 secs / 0.068 secs)
+[1A[2KChrome Headless 137.0.0.0 (Linux 0.0.0): Executed 3 of 21 SUCCESS (0 secs / 0.08 secs)
+[1A[2KChrome Headless 137.0.0.0 (Linux 0.0.0): Executed 4 of 21 SUCCESS (0 secs / 0.089 secs)
+[1A[2KChrome Headless 137.0.0.0 (Linux 0.0.0): Executed 5 of 21 SUCCESS (0 secs / 0.091 secs)
+[1A[2KChrome Headless 137.0.0.0 (Linux 0.0.0): Executed 6 of 21 SUCCESS (0 secs / 0.095 secs)
+[1A[2KChrome Headless 137.0.0.0 (Linux 0.0.0): Executed 7 of 21 SUCCESS (0 secs / 0.133 secs)
+[1A[2KChrome Headless 137.0.0.0 (Linux 0.0.0): Executed 8 of 21 SUCCESS (0 secs / 0.142 secs)
+[1A[2KChrome Headless 137.0.0.0 (Linux 0.0.0): Executed 9 of 21 SUCCESS (0 secs / 0.146 secs)
+[1A[2KChrome Headless 137.0.0.0 (Linux 0.0.0): Executed 10 of 21 SUCCESS (0 secs / 0.149 secs)
+[1A[2KChrome Headless 137.0.0.0 (Linux 0.0.0): Executed 11 of 21 SUCCESS (0 secs / 0.153 secs)
+[1A[2KChrome Headless 137.0.0.0 (Linux 0.0.0): Executed 12 of 21 SUCCESS (0 secs / 0.155 secs)
+[1A[2KChrome Headless 137.0.0.0 (Linux 0.0.0): Executed 13 of 21 SUCCESS (0 secs / 0.166 secs)
+[1A[2KChrome Headless 137.0.0.0 (Linux 0.0.0): Executed 14 of 21 SUCCESS (0 secs / 0.169 secs)
+[1A[2KChrome Headless 137.0.0.0 (Linux 0.0.0): Executed 15 of 21 SUCCESS (0 secs / 0.176 secs)
+[1A[2KChrome Headless 137.0.0.0 (Linux 0.0.0): Executed 16 of 21 SUCCESS (0 secs / 0.177 secs)
+[1A[2KChrome Headless 137.0.0.0 (Linux 0.0.0): Executed 17 of 21 SUCCESS (0 secs / 0.18 secs)
+[1A[2KChrome Headless 137.0.0.0 (Linux 0.0.0): Executed 18 of 21 SUCCESS (0 secs / 0.181 secs)
+[1A[2KChrome Headless 137.0.0.0 (Linux 0.0.0): Executed 19 of 21 SUCCESS (0 secs / 0.183 secs)
+[1A[2KChrome Headless 137.0.0.0 (Linux 0.0.0): Executed 20 of 21 SUCCESS (0 secs / 0.185 secs)
+[1A[2KChrome Headless 137.0.0.0 (Linux 0.0.0): Executed 21 of 21 SUCCESS (0 secs / 0.186 secs)
+[1A[2KChrome Headless 137.0.0.0 (Linux 0.0.0): Executed 21 of 21 SUCCESS (0.837 secs / 0.186 secs)
+TOTAL: 21 SUCCESS
+
+=============================== Coverage summary ===============================
+Statements   : 97.43% ( 152/156 )
+Branches     : 87.85% ( 94/107 )
+Functions    : 100% ( 41/41 )
+Lines        : 97.33% ( 146/150 )
+================================================================================
+✔ Browser application bundle generation complete.
+✔ Browser application bundle generation complete.
+exit=0

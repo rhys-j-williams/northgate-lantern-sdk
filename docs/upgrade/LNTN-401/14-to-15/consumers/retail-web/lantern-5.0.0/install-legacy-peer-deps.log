@@ -1,0 +1,133 @@
+# same scratch tree, now resolving the published 5.0.0 from Verdaccio (http://localhost:4873) with retail-web's committed .npmrc (legacy-peer-deps=true, MOL-3611)
+$ npm install @northgate/lantern-sdk@5.0.0 --package-lock-only --ignore-scripts --no-audit --no-fund
+npm WARN EBADENGINE Unsupported engine {
+npm WARN EBADENGINE   package: 'node-releases@2.0.54',
+npm WARN EBADENGINE   required: { node: '>=18' },
+npm WARN EBADENGINE   current: { node: 'v16.20.2', npm: '8.19.4' }
+npm WARN EBADENGINE }
+
+up to date in 710ms
+exit=0
+
+$ git diff --stat
+ package-lock.json | 164 +++++++++++++++++++++++++++---------------------------
+ package.json      |   6 +-
+ 2 files changed, 85 insertions(+), 85 deletions(-)
+
+$ npm ls @northgate/lantern-sdk @angular/core @angular/common @angular/router rxjs --package-lock-only
+@northgate/retail-web@14.31.2 /home/ubuntu/scratch-retail-web-lantern-5.0.0
+├─┬ @angular-devkit/build-angular@14.2.13
+│ ├─┬ @angular-devkit/architect@0.1402.13
+│ │ └── rxjs@6.6.7
+│ ├─┬ @angular-devkit/build-webpack@0.1402.13
+│ │ └── rxjs@6.6.7
+│ ├─┬ @angular-devkit/core@14.2.13
+│ │ └── rxjs@6.6.7
+│ ├─┬ inquirer@8.2.4
+│ │ └── rxjs@7.5.7 deduped
+│ └── rxjs@6.6.7
+├─┬ @angular/animations@14.3.0
+│ └── @angular/core@14.3.0 deduped
+├─┬ @angular/cdk@14.2.7
+│ ├── @angular/common@14.3.0 deduped
+│ ├── @angular/core@14.3.0 deduped
+│ └── rxjs@7.5.7 deduped
+├─┬ @angular/cli@14.2.13
+│ └─┬ @angular-devkit/schematics@14.2.13
+│   └── rxjs@6.6.7
+├─┬ @angular/common@14.3.0
+│ ├── @angular/core@14.3.0 deduped
+│ └── rxjs@7.5.7 deduped
+├─┬ @angular/compiler@14.3.0
+│ └── @angular/core@14.3.0 deduped
+├─┬ @angular/core@14.3.0
+│ └── rxjs@7.5.7 deduped
+├─┬ @angular/flex-layout@14.0.0-beta.41
+│ ├── @angular/common@14.3.0 deduped
+│ ├── @angular/core@14.3.0 deduped
+│ └── rxjs@7.5.7 deduped
+├─┬ @angular/forms@14.3.0
+│ ├── @angular/common@14.3.0 deduped
+│ ├── @angular/core@14.3.0 deduped
+│ └── rxjs@7.5.7 deduped
+├─┬ @angular/material-moment-adapter@14.2.7
+│ └── @angular/core@14.3.0 deduped
+├─┬ @angular/material@14.2.7
+│ ├── @angular/common@14.3.0 deduped
+│ ├── @angular/core@14.3.0 deduped
+│ └── rxjs@7.5.7 deduped
+├─┬ @angular/platform-browser-dynamic@14.3.0
+│ ├── @angular/common@14.3.0 deduped
+│ └── @angular/core@14.3.0 deduped
+├─┬ @angular/platform-browser@14.3.0
+│ ├── @angular/common@14.3.0 deduped
+│ └── @angular/core@14.3.0 deduped
+├─┬ @angular/router@14.3.0
+│ ├── @angular/common@14.3.0 deduped
+│ ├── @angular/core@14.3.0 deduped
+│ └── rxjs@7.5.7 deduped
+├─┬ @angular/service-worker@14.3.0
+│ ├── @angular/common@14.3.0 deduped
+│ └── @angular/core@14.3.0 deduped
+├─┬ @ngrx/effects@14.3.3
+│ ├── @angular/core@14.3.0 deduped
+│ └── rxjs@7.5.7 deduped
+├─┬ @ngrx/entity@14.3.3
+│ ├── @angular/core@14.3.0 deduped
+│ └── rxjs@7.5.7 deduped
+├─┬ @ngrx/router-store@14.3.3
+│ ├── @angular/common@14.3.0 deduped
+│ ├── @angular/core@14.3.0 deduped
+│ ├── @angular/router@14.3.0 deduped
+│ └── rxjs@7.5.7 deduped
+├─┬ @ngrx/store-devtools@14.3.3
+│ └── rxjs@7.5.7 deduped
+├─┬ @ngrx/store@14.3.3
+│ ├── @angular/core@14.3.0 deduped
+│ └── rxjs@7.5.7 deduped
+├─┬ @ngx-translate/core@14.0.0
+│ ├── @angular/core@14.3.0 deduped
+│ └── rxjs@7.5.7 deduped
+├─┬ @ngx-translate/http-loader@7.0.0
+│ ├── @angular/common@14.3.0 deduped
+│ └── rxjs@7.5.7 deduped
+├─┬ @northgate/canopy-ui@3.7.2
+│ ├── @angular/common@14.3.0 deduped
+│ ├── @angular/core@14.3.0 deduped
+│ ├── @angular/router@14.3.0 deduped
+│ └── rxjs@7.5.7 deduped
+├─┬ @northgate/lantern-sdk@5.0.0
+│ ├── @angular/common@14.3.0 deduped invalid: "^15.0.0" from node_modules/@northgate/lantern-sdk
+│ ├── @angular/core@14.3.0 deduped invalid: "^15.0.0" from node_modules/@northgate/lantern-sdk
+│ ├── @angular/router@14.3.0 deduped invalid: "^15.0.0" from node_modules/@northgate/lantern-sdk
+│ └── rxjs@7.5.7 deduped
+├─┬ angular-oauth2-oidc@14.0.1
+│ ├── @angular/common@14.3.0 deduped invalid: "^15.0.0" from node_modules/@northgate/lantern-sdk
+│ └── @angular/core@14.3.0 deduped invalid: "^15.0.0" from node_modules/@northgate/lantern-sdk
+├─┬ ng2-charts@4.1.1
+│ ├── @angular/common@14.3.0 deduped invalid: "^15.0.0" from node_modules/@northgate/lantern-sdk
+│ ├── @angular/core@14.3.0 deduped invalid: "^15.0.0" from node_modules/@northgate/lantern-sdk
+│ └── rxjs@7.5.7 deduped
+├─┬ ngx-cookie-service@14.0.1
+│ ├── @angular/common@14.3.0 deduped invalid: "^15.0.0" from node_modules/@northgate/lantern-sdk
+│ └── @angular/core@14.3.0 deduped invalid: "^15.0.0" from node_modules/@northgate/lantern-sdk
+├─┬ ngx-mask@14.3.3
+│ ├── @angular/common@14.3.0 deduped invalid: "^15.0.0" from node_modules/@northgate/lantern-sdk
+│ └── @angular/core@14.3.0 deduped invalid: "^15.0.0" from node_modules/@northgate/lantern-sdk
+└── rxjs@7.5.7
+
+npm ERR! code ELSPROBLEMS
+npm ERR! invalid: @angular/common@14.3.0 /home/ubuntu/scratch-retail-web-lantern-5.0.0/node_modules/@angular/common
+npm ERR! invalid: @angular/core@14.3.0 /home/ubuntu/scratch-retail-web-lantern-5.0.0/node_modules/@angular/core
+npm ERR! invalid: @angular/router@14.3.0 /home/ubuntu/scratch-retail-web-lantern-5.0.0/node_modules/@angular/router
+
+npm ERR! A complete log of this run can be found in:
+npm ERR!     <npm cache>/_logs/<run>-debug-0.log
+exit=1
+
+$ npm explain @northgate/lantern-sdk --package-lock-only
+npm ERR! No dependencies found matching @northgate/lantern-sdk
+
+npm ERR! A complete log of this run can be found in:
+npm ERR!     <npm cache>/_logs/<run>-debug-0.log
+exit=1

@@ -1,0 +1,10 @@
+Xray 3.9.4-northgate (Northgate offline mirror 2024-11-18)
+Project lantern-sdk-workspace [npm] watch northgate-cswt-prod
+Scanned 975 components from package-lock.json; runtime node 16.20.2 in 19 ms
+
+  Critical 0  High 0  Medium 7  Low 3   (lifecycle 4, dev only 7)
+
+
+Reports written to .xray-reports
+Policy gate PASSED: no violations at or above high
+exit=0
