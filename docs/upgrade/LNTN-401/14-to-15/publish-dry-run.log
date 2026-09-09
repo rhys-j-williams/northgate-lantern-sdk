@@ -1,0 +1,44 @@
+
+> lantern-sdk-workspace@5.0.0 publish:local
+> bash scripts/publish.sh
+
+publish: @northgate/lantern-sdk@5.0.0 -> http://localhost:4873
+
+> lantern-sdk-workspace@5.0.0 build
+> ng build lantern-sdk --configuration production
+
+Building Angular Package
+
+------------------------------------------------------------------------------
+Building entry point '@northgate/lantern-sdk'
+------------------------------------------------------------------------------
+- Compiling with Angular sources in Ivy partial compilation mode.
+✔ Compiling with Angular sources in Ivy partial compilation mode.
+- Writing FESM bundles
+✔ Writing FESM bundles
+- Copying assets
+✔ Copying assets
+- Writing package manifest
+✔ Writing package manifest
+✔ Built @northgate/lantern-sdk
+
+------------------------------------------------------------------------------
+Built Angular Package
+ - from: /home/ubuntu/repos/northgate-lantern-sdk/projects/lantern-sdk
+ - to:   /home/ubuntu/repos/northgate-lantern-sdk/dist/lantern-sdk
+------------------------------------------------------------------------------
+
+Build at: 2026-09-09T20:23:14.074Z - Time: 2289ms
+
+verify-partial-ivy: @northgate/lantern-sdk@5.0.0 at /home/ubuntu/repos/northgate-lantern-sdk/dist/lantern-sdk
+  metadata files : 0
+  js/mjs files   : 11 (2 fesm bundles)
+  d.ts files     : 9
+  OK: Ivy partial compilation, no View Engine output
+verify-partial-ivy: @northgate/lantern-sdk@5.0.0 at /tmp/lantern-verify-0PAy9j/package
+  metadata files : 0
+  js/mjs files   : 11 (2 fesm bundles)
+  d.ts files     : 9
+  OK: Ivy partial compilation, no View Engine output
+publish: DRY_RUN=1, tarball left at dist/lantern-sdk/northgate-lantern-sdk-5.0.0.tgz
+exit=0
