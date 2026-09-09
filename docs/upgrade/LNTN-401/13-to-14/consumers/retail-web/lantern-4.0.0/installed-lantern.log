@@ -1,0 +1,30 @@
+== package.json
+{
+  "version": "4.0.0",
+  "peerDependencies": {
+    "@angular/common": ">=14.0.0 <15.0.0",
+    "@angular/core": ">=14.0.0 <15.0.0",
+    "@angular/router": ">=14.0.0 <15.0.0",
+    "rxjs": ">=6.5.0 <7.0.0"
+  },
+  "module": "fesm2015/northgate-lantern-sdk.mjs",
+  "typings": "index.d.ts",
+  "metadata": null
+}
+== tree
+esm2020
+fesm2015
+fesm2020
+index.d.ts
+lib
+node_modules
+package.json
+public-api.d.ts
+== ngcc artefacts
+ls: cannot access 'node_modules/@northgate/lantern-sdk/__ivy_ngcc__': No such file or directory
+0
+== SDK_VERSION stamp
+SDK_VERSION = '4.0.0'
+16
+dist/retail-web/en-US/main.be5bf44ed836d3d5.js
+dist/retail-web/es/main.be5bf44ed836d3d5.js

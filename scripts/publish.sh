@@ -23,9 +23,9 @@ VERSION="$(node -p "require('./projects/lantern-sdk/package.json').version")"
 echo "publish: @northgate/lantern-sdk@$VERSION -> $REGISTRY_URL"
 
 npm run build
-node scripts/verify-view-engine.js
+node scripts/verify-partial-ivy.js
 TGZ="$(cd dist/lantern-sdk && npm pack --silent)"
-node scripts/verify-view-engine.js "dist/lantern-sdk/$TGZ"
+node scripts/verify-partial-ivy.js "dist/lantern-sdk/$TGZ"
 
 if [ "$DRY_RUN" = "1" ]; then
   echo "publish: DRY_RUN=1, tarball left at dist/lantern-sdk/$TGZ"

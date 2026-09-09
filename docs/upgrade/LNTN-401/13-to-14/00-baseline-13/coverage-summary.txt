@@ -1,0 +1,6 @@
+TOTAL: 21 SUCCESS
+Statements   : 97.51% ( 157/161 )
+Branches     : 86.55% ( 103/119 )
+Functions    : 100% ( 41/41 )
+Lines        : 97.33% ( 146/150 )
+exit=0

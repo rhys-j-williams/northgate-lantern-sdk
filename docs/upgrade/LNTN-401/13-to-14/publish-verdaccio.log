@@ -1,0 +1,109 @@
+
+> lantern-sdk-workspace@4.0.0 publish:local /home/ubuntu/repos/northgate-lantern-sdk
+> bash scripts/publish.sh
+
+publish: @northgate/lantern-sdk@4.0.0 -> http://localhost:4873
+
+> lantern-sdk-workspace@4.0.0 build /home/ubuntu/repos/northgate-lantern-sdk
+> ng build lantern-sdk --configuration production
+
+Building Angular Package
+
+------------------------------------------------------------------------------
+Building entry point '@northgate/lantern-sdk'
+------------------------------------------------------------------------------
+- Compiling with Angular sources in Ivy partial compilation mode.
+✔ Compiling with Angular sources in Ivy partial compilation mode.
+- Writing FESM bundles
+✔ Writing FESM bundles
+- Copying assets
+✔ Copying assets
+- Writing package manifest
+✔ Writing package manifest
+✔ Built @northgate/lantern-sdk
+
+------------------------------------------------------------------------------
+Built Angular Package
+ - from: /home/ubuntu/repos/northgate-lantern-sdk/projects/lantern-sdk
+ - to:   /home/ubuntu/repos/northgate-lantern-sdk/dist/lantern-sdk
+------------------------------------------------------------------------------
+
+Build at: 2026-09-08T19:45:07.401Z - Time: 2419ms
+
+verify-partial-ivy: @northgate/lantern-sdk@4.0.0 at /home/ubuntu/repos/northgate-lantern-sdk/dist/lantern-sdk
+  metadata files : 0
+  js/mjs files   : 11 (2 fesm bundles)
+  d.ts files     : 9
+  OK: Ivy partial compilation, no View Engine output
+verify-partial-ivy: @northgate/lantern-sdk@4.0.0 at /tmp/lantern-verify-KrF0SA/package
+  metadata files : 0
+  js/mjs files   : 11 (2 fesm bundles)
+  d.ts files     : 9
+  OK: Ivy partial compilation, no View Engine output
+curl: (22) The requested URL returned error: 404
+npm notice 
+npm notice 📦  @northgate/lantern-sdk@4.0.0
+npm notice === Tarball Contents === 
+npm notice 1.6kB  package.json                               
+npm notice 36.7kB fesm2015/northgate-lantern-sdk.mjs.map     
+npm notice 36.3kB fesm2020/northgate-lantern-sdk.mjs.map     
+npm notice 11.5kB esm2020/lib/lantern-router.service.mjs     
+npm notice 6.7kB  esm2020/lib/lantern-session.interceptor.mjs
+npm notice 8.1kB  esm2020/lib/lantern-track.directive.mjs    
+npm notice 4.6kB  esm2020/lib/lantern.config.mjs             
+npm notice 8.1kB  esm2020/lib/lantern.module.mjs             
+npm notice 26.0kB esm2020/lib/lantern.service.mjs            
+npm notice 4.3kB  esm2020/lib/lantern.vendor.mjs             
+npm notice 524B   esm2020/northgate-lantern-sdk.mjs          
+npm notice 21.8kB fesm2015/northgate-lantern-sdk.mjs         
+npm notice 21.5kB fesm2020/northgate-lantern-sdk.mjs         
+npm notice 1.7kB  esm2020/public-api.mjs                     
+npm notice 127B   index.d.ts                                 
+npm notice 1.4kB  lib/lantern-router.service.d.ts            
+npm notice 1.3kB  lib/lantern-session.interceptor.d.ts       
+npm notice 1.5kB  lib/lantern-track.directive.d.ts           
+npm notice 2.1kB  lib/lantern.config.d.ts                    
+npm notice 1.5kB  lib/lantern.module.d.ts                    
+npm notice 2.4kB  lib/lantern.service.d.ts                   
+npm notice 1.4kB  lib/lantern.vendor.d.ts                    
+npm notice 297B   public-api.d.ts                            
+npm notice === Tarball Details === 
+npm notice name:          @northgate/lantern-sdk                  
+npm notice version:       4.0.0                                   
+npm notice package size:  53.4 kB                                 
+npm notice unpacked size: 201.5 kB                                
+npm notice shasum:        20eca839748ad816f11c7d70ccbf05b8c25b8ac0
+npm notice integrity:     sha512-F0ec67fogYYag[...]KO0JSqI3uSxgQ==
+npm notice total files:   23                                      
+npm notice 
+npm ERR! code E401
+npm ERR! Unable to authenticate, your authentication token seems to be invalid.
+npm ERR! To correct this please trying logging in again with:
+npm ERR!     npm login
+
+npm ERR! A complete log of this run can be found in:
+npm ERR!     /home/ubuntu/.npm/_logs/2026-09-08T19_45_08_110Z-debug.log
+npm ERR! code ELIFECYCLE
+npm ERR! errno 1
+npm ERR! lantern-sdk-workspace@4.0.0 publish:local: `bash scripts/publish.sh`
+npm ERR! Exit status 1
+npm ERR! 
+npm ERR! Failed at the lantern-sdk-workspace@4.0.0 publish:local script.
+npm ERR! This is probably not a problem with npm. There is likely additional logging output above.
+
+npm ERR! A complete log of this run can be found in:
+npm ERR!     /home/ubuntu/.npm/_logs/2026-09-08T19_45_08_119Z-debug.log
+exit=1
+- Compiling with Angular sources in Ivy partial compilation mode.
+✔ Compiling with Angular sources in Ivy partial compilation mode.
+- Writing FESM bundles
+✔ Writing FESM bundles
+- Copying assets
+✔ Copying assets
+- Writing package manifest
+✔ Writing package manifest
+✔ Built @northgate/lantern-sdk
+[publish-internal] lantern-sdk@4.0.0: building with node 14.21.3
+[publish-internal] lantern-sdk@4.0.0 published
+[publish-internal] done: 1 published/present, 0 skipped, 0 failed
+exit=0

@@ -1,0 +1,40 @@
+publish: @northgate/lantern-sdk@2.4.1 -> http://localhost:4873
+
+> lantern-sdk-workspace@2.4.1 build /home/ubuntu/repos/northgate-lantern-sdk
+> ng build lantern-sdk --configuration production
+
+Building Angular Package
+
+------------------------------------------------------------------------------
+Building entry point '@northgate/lantern-sdk'
+------------------------------------------------------------------------------
+- Compiling with Angular in legacy View Engine compilation mode.
+✔ Compiling with Angular in legacy View Engine compilation mode.
+- Bundling to FESM2015
+✔ Bundling to FESM2015
+- Bundling to UMD
+✔ Bundling to UMD
+- Writing package metadata
+✔ Writing package metadata
+✔ Built @northgate/lantern-sdk
+
+------------------------------------------------------------------------------
+Built Angular Package
+ - from: /home/ubuntu/repos/northgate-lantern-sdk/projects/lantern-sdk
+ - to:   /home/ubuntu/repos/northgate-lantern-sdk/dist/lantern-sdk
+------------------------------------------------------------------------------
+
+Build at: 2026-09-08T17:03:14.639Z - Time: 2820ms
+
+verify-view-engine: @northgate/lantern-sdk@2.4.1 at /home/ubuntu/repos/northgate-lantern-sdk/dist/lantern-sdk
+  metadata files : 1
+  js files       : 11
+  d.ts files     : 9
+  OK: View Engine format, no Ivy output
+verify-view-engine: @northgate/lantern-sdk@2.4.1 at /tmp/lantern-verify-u4oKex/package
+  metadata files : 1
+  js files       : 11
+  d.ts files     : 9
+  OK: View Engine format, no Ivy output
+publish: DRY_RUN=1, tarball left at dist/lantern-sdk/northgate-lantern-sdk-2.4.1.tgz
+exit=0

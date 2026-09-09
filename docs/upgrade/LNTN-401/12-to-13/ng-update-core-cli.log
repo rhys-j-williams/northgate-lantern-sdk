@@ -1,0 +1,57 @@
+The installed Angular CLI version is outdated.
+Installing a temporary Angular CLI versioned 13.3.11 to perform the update.
+- Installing package...
+✔ Package successfully installed.
+Repository is not clean. Update changes will be mixed with pre-existing changes.
+Using package manager: 'npm'
+Collecting installed dependencies...
+Found 26 dependencies.
+Fetching dependency metadata from registry...
+    Updating package.json with dependency @angular-devkit/build-angular @ "13.3.11" (was "12.2.18")...
+    Updating package.json with dependency @angular/cli @ "13.3.11" (was "12.2.18")...
+    Updating package.json with dependency @angular/compiler-cli @ "13.4.0" (was "12.2.17")...
+    Updating package.json with dependency ng-packagr @ "13.3.1" (was "12.2.7")...
+    Updating package.json with dependency typescript @ "4.6.4" (was "4.3.5")...
+    Updating package.json with dependency @angular/animations @ "13.4.0" (was "12.2.17")...
+    Updating package.json with dependency @angular/common @ "13.4.0" (was "12.2.17")...
+    Updating package.json with dependency @angular/compiler @ "13.4.0" (was "12.2.17")...
+    Updating package.json with dependency @angular/core @ "13.4.0" (was "12.2.17")...
+    Updating package.json with dependency @angular/forms @ "13.4.0" (was "12.2.17")...
+    Updating package.json with dependency @angular/platform-browser @ "13.4.0" (was "12.2.17")...
+    Updating package.json with dependency @angular/platform-browser-dynamic @ "13.4.0" (was "12.2.17")...
+    Updating package.json with dependency @angular/router @ "13.4.0" (was "12.2.17")...
+  UPDATE package.json (1795 bytes)
+- Installing packages...
+✔ Packages successfully installed.
+** Executing migrations of package '@angular/cli' **
+
+▸ Remove polyfills required only for Internet Explorer which is no longer supported.
+  Migration completed.
+
+▸ Remove no longer valid Angular schematic options from `angular.json`.
+  Migration completed.
+
+▸ Remove deprecated options from 'angular.json' that are no longer present in v13.
+  UPDATE angular.json (1257 bytes)
+  Migration completed.
+
+▸ Updating '.gitignore' to include '.angular/cache'.
+  UPDATE .gitignore (211 bytes)
+  Migration completed.
+
+▸ Update library projects to be published in partial mode and removed deprecated options from ng-packagr configuration.
+  UPDATE projects/lantern-sdk/tsconfig.lib.prod.json (536 bytes)
+  Migration completed.
+
+** Executing migrations of package '@angular/core' **
+
+▸ Migrates `[routerLink]=""` in templates to `[routerLink]="[]"` because these links are likely intended to route to the current page with updated fragment/query params.
+  Migration completed.
+
+▸ In Angular version 13, the `teardown` flag in `TestBed` will be enabled by default.
+  This migration automatically opts out existing apps from the new teardown behavior.
+  Migration completed.
+
+▸ As of Angular version 13, `entryComponents` are no longer necessary.
+  Migration completed.
+

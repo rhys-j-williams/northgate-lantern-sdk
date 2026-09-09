@@ -1,0 +1,31 @@
+
+     _                      _                 ____ _     ___
+    / \   _ __   __ _ _   _| | __ _ _ __     / ___| |   |_ _|
+   / △ \ | '_ \ / _` | | | | |/ _` | '__|   | |   | |    | |
+  / ___ \| | | | (_| | |_| | | (_| | |      | |___| |___ | |
+ /_/   \_\_| |_|\__, |\__,_|_|\__,_|_|       \____|_____|___|
+                |___/
+    
+
+Angular CLI: 13.3.11
+Node: 14.21.3
+Package Manager: npm 6.14.18
+OS: linux x64
+
+Angular: 13.4.0
+... animations, common, compiler, compiler-cli, core, forms
+... platform-browser, platform-browser-dynamic, router
+
+Package                         Version
+---------------------------------------------------------
+@angular-devkit/architect       0.1303.11
+@angular-devkit/build-angular   13.3.11
+@angular-devkit/core            13.3.11
+@angular-devkit/schematics      13.3.11
+@angular/cli                    13.3.11
+@schematics/angular             13.3.11
+ng-packagr                      13.3.1
+rxjs                            6.6.7
+typescript                      4.6.4
+    
+exit=0

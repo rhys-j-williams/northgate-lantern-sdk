@@ -1,0 +1,7 @@
+STATE  COMPONENT          CHECK                              DETAIL
+-----  ---------          -----                              ------
+SKIP   retail-web         repository checked out             no checkout at /home/ubuntu/estate-scratch/northgate-retail-web
+PASS   retail-web         localised builds                   en-US and es
+
+pass 1, fail 0, skip 1
+exit=0

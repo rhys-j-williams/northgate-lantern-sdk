@@ -1,0 +1,30 @@
+
+> nice-napi@1.0.2 install /home/ubuntu/repos/northgate-lantern-sdk/node_modules/nice-napi
+> node-gyp-build
+
+
+> esbuild@0.14.22 postinstall /home/ubuntu/repos/northgate-lantern-sdk/node_modules/esbuild
+> node install.js
+
+
+> core-js@3.20.3 postinstall /home/ubuntu/repos/northgate-lantern-sdk/node_modules/core-js
+> node -e "try{require('./postinstall')}catch(e){}"
+
+
+> @angular/cli@13.3.11 postinstall /home/ubuntu/repos/northgate-lantern-sdk/node_modules/@angular/cli
+> node ./bin/postinstall/script.js
+
+
+> core-js-pure@3.50.0 postinstall /home/ubuntu/repos/northgate-lantern-sdk/node_modules/core-js-pure
+> node -e "try{require('./postinstall')}catch(e){}"
+
+
+> @parcel/watcher@2.0.4 install /home/ubuntu/repos/northgate-lantern-sdk/node_modules/@parcel/watcher
+> node-gyp-build
+
+
+> nx@15.9.3 postinstall /home/ubuntu/repos/northgate-lantern-sdk/node_modules/@nrwl/cli/node_modules/nx
+> node ./bin/compute-project-graph
+
+added 1147 packages in 7.821s
+exit=0

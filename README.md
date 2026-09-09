@@ -5,8 +5,10 @@ Enablement (DAE)**, Charlotte. Slack `#dae-lantern`, Jira `LNTN`. On-call is bus
 analytics is not a P1 service and nobody should be paged for it (see the SLO exemption in
 `RISK-2019-118`).
 
-Current release: **2.4.1** (H1 2024 train). Next planned: 2.5.0, H2 2024 train, scope in
-`LNTN-455`.
+Current release: **4.0.0** (Angular 14, partial Ivy; `LNTN-401`, 2026.10.2 train), the second and
+last `LNTN-401` catch-up hop and the first release retail-web can pin. Previous lines: 3.0.0
+(Angular 13, partial Ivy) and 2.4.1 (Angular 12, View Engine), both still published for consumers
+on those majors. Next: Lantern follows the estate 14 -> 15 wave after `canopy-ui` 4 (Canopy MDC).
 
 ## What it does
 
@@ -23,12 +25,22 @@ Consumers: retail-web (Northgate Online), business-web (Northgate Business), Bea
 ## Installing
 
 ```
-npm install @northgate/lantern-sdk@2.4.1 --save-exact
+npm install @northgate/lantern-sdk@4.0.0 --save-exact
 ```
 
-From Artifactory `npm-northgate`. Peer range is Angular 12 (see below). If npm complains about
-peers on your application's Angular, put `legacy-peer-deps=true` in the application's `.npmrc`;
-retail-web and business-web already have it.
+From Artifactory `npm-northgate`. Peer range is Angular 14 (`>=14.0.0 <15.0.0`, see below);
+applications on Angular 13 stay on 3.0.0 and applications on Angular 12 on 2.4.1. Partial-Ivy
+output is only supported on applications at or above the library's Angular major, so do not force
+the install past the peer range: `legacy-peer-deps=true` in retail-web's `.npmrc` is there for
+other reasons (`MOL-3611`). retail-web (Angular 14.3.0) is inside 4.0.0's range and was verified
+against it (`docs/upgrade/LNTN-401/13-to-14/CONSUMERS.md`); its pin bump is a retail-web PR
+(`MOL-4471`).
+
+| library | Angular peer range | output | consumers |
+| --- | --- | --- | --- |
+| 2.4.1 | `>=12.0.0 <13.0.0` (retail-web installs it past the range with `legacy-peer-deps`; `ngcc` links it on install) | View Engine | retail-web 14.3.0 (current pin until `MOL-4471`), business-web |
+| 3.0.0 | `>=13.0.0 <14.0.0` | partial Ivy | none in the estate (intermediate hop) |
+| 4.0.0 | `>=14.0.0 <15.0.0` | partial Ivy | retail-web 14.3.0 (verified PASS; pin bump pending in `MOL-4471`) |
 
 ```ts
 // app.module.ts
@@ -103,7 +115,12 @@ them in application code.
 
 ## Build and release
 
-Node **14.21.3** (`.nvmrc`), Angular **12.2.17**, ng-packagr **12.2.7**, TypeScript 4.3.5.
+Node **14.21.3** (`.nvmrc`), Angular **14.3.0** (CLI 14.2.13), ng-packagr **14.2.2**, TypeScript
+**4.7.4**, RxJS 6.6.7, zone.js 0.11.4, TypeScript target es2020. Lint is angular-eslint 14
+(`.eslintrc.json`); TSLint and codelyzer were removed in 3.0.0 because the CLI 13 dropped the TSLint
+builder and codelyzer does not support Angular 13. Node stays 14 for the 14 line (inside Angular 14's
+`^14.15.0 || ^16.10.0`); the bump to 16.20.2 comes with 14 -> 15. The full matrix is in
+`docs/upgrade/LNTN-401/COMPATIBILITY_MATRIX.md`.
 
 ```
 nvm use
@@ -111,22 +128,23 @@ npm ci
 npm run lint
 npm test            # Karma, ChromeHeadless; CHROME_BIN if Chrome is somewhere odd
 npm run build       # ng-packagr, production config
-npm run verify:view-engine
-npm run publish:local   # build, verify, pack, publish to the registry in .npmrc
+npm run verify:partial-ivy
+npm run publish:local   # build, verify, pack, verify the tarball, publish to the registry in .npmrc
 ```
 
-The library is built with **Angular 12 and View Engine** (`enableIvy: false` in
-`tsconfig.lib.prod.json`), and that is the supported output format for this line. It gives the
-widest consumer compatibility across the estate's application versions: an Angular 12 or 14
-application consumes the package through ngcc at install time with no action from the app team,
-which is why `postinstall` scripts in retail-web and business-web run `ngcc` already. The
-`verify:view-engine` step is in the Jenkins job and fails the release if the output ever changes
-format. Ivy/partial output was assessed under `LNTN-361` and deferred: it needs the vendor script
-type contract re-signed and an updated Third Party Risk assessment for the SDK line, both of which
-sit with the Vendor Relationship team rather than with DAE or the application teams. Tracked
-against the H1 2025 train.
+The library is built with **Angular 14 and Ivy partial compilation** (`compilationMode: "partial"` in
+`tsconfig.lib.prod.json`), the Angular Package Format 14 layout (`fesm2015`, `fesm2020`, `esm2020`,
+`index.d.ts`, no UMD, no `.metadata.json`). Consuming applications link the output with the Angular linker in their
+own build, so the package must never be newer than the application's Angular major; the peer range
+enforces that. `scripts/verify-partial-ivy.js` (`verify:partial-ivy`) is the release gate: it fails
+if the output contains full-Ivy `ɵɵdefine*` or `ngcc` markers, if `ɵɵngDeclare*` markers or the
+declaration types are missing, if a public API symbol disappears, if the Angular or rxjs peer range drifts, or if the
+package version and the `SDK_VERSION` stamp disagree with the workspace version. The rationale for
+the format change and for doing 12 -> 13 -> 14 as two releases is in
+`docs/adr/0001-angular-12-to-13.md`; the 13 -> 14 hop itself is `docs/adr/0002-angular-13-to-14.md`;
+the vendor script contract (`installQueueStub`, the queue drain, `lantern.min.js` 4.11) is unchanged.
 
-`@types/node` is pinned to 16.18.11. Newer `@types/node` declare `Disposable`, which TS 4.3 cannot
+`@types/node` is pinned to 16.18.11. Newer `@types/node` declare `Disposable`, which TS 4.x cannot
 parse. Do not let Renovate move it (there is a rule, check `renovate.json` in platform-tooling if
 it starts bumping again).
 
@@ -153,4 +171,6 @@ during the release window, app teams merge them. History in `CHANGELOG.md`.
 Started 2020 as an inline snippet in retail-web, extracted to a library in early 2021 after
 business-web copied the snippet and diverged (`LNTN-101`). 1.x was the un-scoped `lantern-angular`
 package; 2.0 (Nov 2021) renamed it to `@northgate/lantern-sdk` and moved to Angular 12. 2.2 added the
-router masking after GIS-1471. 2.4 is the current line.
+router masking after GIS-1471. 2.4 is the last View Engine line. 3.0 (`LNTN-401`) moved to Angular 13
+and partial Ivy as the first of two catch-up hops ahead of the estate's Angular 15 wave; 4.0
+(`LNTN-401`) moved to Angular 14 and is the first release the Angular 14 applications can pin.

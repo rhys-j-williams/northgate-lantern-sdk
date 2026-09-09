@@ -2,6 +2,46 @@
 
 DAE keeps this by hand. Ticket keys are LNTN unless stated.
 
+## 4.0.0 - unreleased (2026.10.2 train)
+
+Semver major: Angular 13 -> 14. Second and last of the two LNTN-401 catch-up hops; Lantern is now
+level with the estate (Angular 14) and 4.0.0 is the first release retail-web can pin. ADR
+`docs/adr/0002-angular-13-to-14.md`, evidence `docs/upgrade/LNTN-401/13-to-14/`. Public API, config
+keys, header name and the GIS-1471 masking rules are unchanged; no migration steps in application
+code.
+
+- BREAKING 401: peer range is `@angular/{common,core,router} >=14.0.0 <15.0.0`. Applications on
+  Angular 13 stay on 3.0.0. retail-web (Angular 14.3.0) verified PASS against 4.0.0
+  (`docs/upgrade/LNTN-401/13-to-14/CONSUMERS.md`); its pin bump is a retail-web PR (MOL-4471).
+- 401: Angular 14.3.0, CLI 14.2.13, ng-packagr 14.2.2, TypeScript 4.7.4, angular-eslint 14.4.0.
+  Node 14.21.3, RxJS 6.6.7 and zone.js 0.11.4 unchanged. Output still Ivy partial compilation
+  (APF 14: entry typings now `index.d.ts`, resolved through `package.json` `typings`).
+- 401: TypeScript compilation target es2020 (CLI 14 migration); `angular.json` `defaultProject`
+  removed (CLI 14 migration; the npm scripts already name the project).
+- 401: `verify:partial-ivy` also checks the rxjs peer range, that the built package version matches
+  the workspace version, and that a fesm bundle stamps `SDK_VERSION`.
+- 401: `SDK_VERSION` reported as `@northgate/lantern-sdk@4.0.0` in the vendor context.
+
+## 3.0.0 - unreleased (2026.10.2 train)
+
+Semver major: Angular 12 -> 13 and View Engine -> Ivy partial compilation. First of the two
+LNTN-401 catch-up hops (13 -> 14 follows as 4.0.0); ADR `docs/adr/0001-angular-12-to-13.md`,
+evidence `docs/upgrade/LNTN-401/12-to-13/`. Public API, config keys, header name and the GIS-1471
+masking rules are unchanged; no migration steps in application code.
+
+- BREAKING 401: peer range is `@angular/{common,core,router} >=13.0.0 <14.0.0`. Applications on
+  Angular 12 stay on 2.4.1; applications on Angular 14 (retail-web) stay on 2.4.1 until 4.0.0.
+- BREAKING 401: output is Angular Package Format 13 with `compilationMode: partial`. No UMD bundle,
+  no `.metadata.json`, nothing for `ngcc` to process; the consumer's Angular linker handles it.
+- 401: Angular 13.4.0, CLI 13.3.11, ng-packagr 13.3.1, TypeScript 4.6.4. Node 14.21.3, RxJS 6.6.7
+  and zone.js 0.11.4 unchanged.
+- 401: `verify:view-engine` replaced by `verify:partial-ivy` (`scripts/verify-partial-ivy.js`);
+  `publish:local` now verifies both `dist/lantern-sdk` and the packed tarball before publishing.
+- 401: TSLint and codelyzer removed; lint is angular-eslint 13 with the same rule intent
+  (`lantern` selector prefix, lifecycle interfaces, no input/output rename, template checks).
+- 401: specs for session resume inside / outside the 30 minute idle window and for the `debug`
+  flag; `SDK_VERSION` reported as `@northgate/lantern-sdk@3.0.0` in the vendor context.
+
 ## 2.4.1 - 2024-05-21
 
 - 437: `sessionId()` no longer throws when sessionStorage is disabled by group policy (branch PCs)

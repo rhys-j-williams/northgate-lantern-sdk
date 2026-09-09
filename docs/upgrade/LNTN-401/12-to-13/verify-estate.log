@@ -1,0 +1,21 @@
+STATE  COMPONENT          CHECK                              DETAIL
+-----  ---------          -----                              ------
+PASS   lantern-sdk        no forbidden strings (worktree)    
+PASS   lantern-sdk        no forbidden strings (history)     
+PASS   lantern-sdk        no build output committed          
+PASS   lantern-sdk        exact dependency versions          
+PASS   lantern-sdk        package.json present               
+PASS   lantern-sdk        .nvmrc present                     
+PASS   lantern-sdk        lockfile committed                 
+PASS   lantern-sdk        history depth                      72 >= 30
+PASS   lantern-sdk        author spread                      7 authors
+PASS   lantern-sdk        release tags                       v2.0.0 v2.3.1 v2.4.1 
+PASS   lantern-sdk        npm ci                             
+PASS   lantern-sdk        lint                               
+PASS   lantern-sdk        unit tests                         
+PASS   lantern-sdk        coverage reported                  97.3% lines
+PASS   lantern-sdk        production build                   
+PASS   lantern-sdk        partial Ivy output (LNTN-401)      ɵɵngDeclare* markers, no metadata.json
+
+pass 16, fail 0, skip 0
+exit=0
