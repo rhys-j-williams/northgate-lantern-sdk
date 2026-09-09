@@ -3,7 +3,7 @@
 # Builds, verifies the output format, packs, and publishes to the registry in .npmrc
 # (Artifactory npm-northgate in the real world; the local Verdaccio on 4873 for the estate).
 #
-# Needs: node 14.21.3 active, a registry that accepts the publisher token. Publishing from a
+# Needs: node 16.20.2 active, a registry that accepts the publisher token. Publishing from a
 # laptop is allowed for patch releases only; minors go through the Jenkins job lantern-sdk-release.
 set -euo pipefail
 HERE="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"

@@ -1,6 +1,6 @@
 {
   "name": "@northgate/lantern-sdk",
-  "version": "4.0.0",
+  "version": "5.0.0",
   "description": "Angular wrapper for the Lumenview Lantern analytics vendor script (LanternModule.forRoot, LanternService, router page tracking, lanternTrack directive, session header interceptor). Owned by Digital Analytics Enablement.",
   "license": "UNLICENSED",
   "private": false,
@@ -19,10 +19,10 @@
     "angular"
   ],
   "peerDependencies": {
-    "@angular/common": ">=14.0.0 <15.0.0",
-    "@angular/core": ">=14.0.0 <15.0.0",
-    "@angular/router": ">=14.0.0 <15.0.0",
-    "rxjs": ">=6.5.0 <7.0.0"
+    "@angular/common": "^15.0.0",
+    "@angular/core": "^15.0.0",
+    "@angular/router": "^15.0.0",
+    "rxjs": "^7.5.0"
   },
   "dependencies": {
     "tslib": "2.3.1"
