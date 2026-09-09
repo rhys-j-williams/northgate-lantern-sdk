@@ -22,7 +22,7 @@ const path = require('path');
 const { execFileSync } = require('child_process');
 
 const PACKAGE_NAME = '@northgate/lantern-sdk';
-const RXJS_PEER = '>=6.5.0 <7.0.0';
+const RXJS_PEER = '^7.5.0';
 const PARTIAL_MARKERS = [
   '\u0275\u0275ngDeclareDirective',
   '\u0275\u0275ngDeclareNgModule',
@@ -136,7 +136,7 @@ function verify(root) {
     problems.push('package.json has no "exports" map');
   }
   const major = angularMajor();
-  const expectedPeer = `>=${major}.0.0 <${major + 1}.0.0`;
+  const expectedPeer = `^${major}.0.0`;
   for (const dep of ['@angular/common', '@angular/core', '@angular/router']) {
     const peer = (pkg.peerDependencies || {})[dep] || '';
     if (peer !== expectedPeer) {
@@ -145,7 +145,7 @@ function verify(root) {
   }
   const rxjsPeer = (pkg.peerDependencies || {}).rxjs || '';
   if (rxjsPeer !== RXJS_PEER) {
-    problems.push(`rxjs peer range is "${rxjsPeer}", expected "${RXJS_PEER}" (consumers are on RxJS 6)`);
+    problems.push(`rxjs peer range is "${rxjsPeer}", expected "${RXJS_PEER}" (consumers are on RxJS 7.5+)`);
   }
   const workspaceVersion = workspacePackage().version;
   if (pkg.version !== workspaceVersion) {
