@@ -1,0 +1,25 @@
+# scratch: detached worktree of northgate-retail-web origin/develop 8b456b7; node v16.20.2 npm 8.19.4
+# retail .npmrc has legacy-peer-deps=true (MOL-3611); first run overrides it to strict so npm reports the peer conflict
+$ npm install /home/ubuntu/northgate-lantern-sdk-5.0.0.tgz --package-lock-only --ignore-scripts --no-audit --no-fund --legacy-peer-deps=false
+npm ERR! code ERESOLVE
+npm ERR! ERESOLVE unable to resolve dependency tree
+npm ERR! 
+npm ERR! While resolving: @northgate/retail-web@14.31.2
+npm ERR! Found: @angular/common@14.3.0
+npm ERR! node_modules/@angular/common
+npm ERR!   @angular/common@"14.3.0" from the root project
+npm ERR! 
+npm ERR! Could not resolve dependency:
+npm ERR! peer @angular/common@"^15.0.0" from @northgate/lantern-sdk@5.0.0
+npm ERR! node_modules/@northgate/lantern-sdk
+npm ERR!   @northgate/lantern-sdk@"file:../northgate-lantern-sdk-5.0.0.tgz" from the root project
+npm ERR! 
+npm ERR! Fix the upstream dependency conflict, or retry
+npm ERR! this command with --force, or --legacy-peer-deps
+npm ERR! to accept an incorrect (and potentially broken) dependency resolution.
+npm ERR! 
+npm ERR! See <npm cache>/eresolve-report.txt for a full report.
+
+npm ERR! A complete log of this run can be found in:
+npm ERR!     <npm cache>/_logs/<run>-debug-0.log
+exit=1

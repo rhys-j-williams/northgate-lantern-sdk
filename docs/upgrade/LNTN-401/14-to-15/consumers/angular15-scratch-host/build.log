@@ -1,0 +1,59 @@
+# attempt 1 failed on @types/node@22.20.2 (transitive, TS 4.9 incompatible: TS2502 CompressionStream) - unrelated to Lantern; pin @types/node 16.18.11 like retail-web/lantern-sdk
+$ npm install -D @types/node@16.18.11 --no-audit --no-fund
+npm WARN EBADENGINE Unsupported engine {
+npm WARN EBADENGINE   package: 'node-releases@2.0.55',
+npm WARN EBADENGINE   required: { node: '>=18' },
+npm WARN EBADENGINE   current: { node: 'v16.20.2', npm: '8.19.4' }
+npm WARN EBADENGINE }
+
+removed 2 packages, and changed 1 package in 950ms
+exit=0
+
+$ npx ng build --configuration production
+- Generating browser application bundles (phase: setup)...
+✔ Browser application bundle generation complete.
+✔ Browser application bundle generation complete.
+- Copying assets...
+✔ Copying assets complete.
+- Generating index html...
+✔ Index html generation complete.
+
+Initial Chunk Files           | Names         |  Raw Size | Estimated Transfer Size
+main.fbfe4bc15cd4c1fc.js      | main          | 198.69 kB |                53.25 kB
+polyfills.efc8850858cb82f4.js | polyfills     |  33.10 kB |                10.67 kB
+runtime.cc258f786cdd49bd.js   | runtime       | 906 bytes |               522 bytes
+styles.ef46db3751d8e999.css   | styles        |   0 bytes |                       -
+
+| Initial Total | 232.67 kB |                64.43 kB
+
+Build at: 2026-09-09T20:27:26.381Z - Hash: 0e5d9677dd89b2b2 - Time: 4614ms
+exit=0
+
+$ SDK_VERSION stamp / lantern strings in the production main bundle
+      1 "5.0.0"
+      1 X-Analytics-Session
+      2 data-lantern-sdk
+      2 lantern-sdk
+
+$ installed package
+{
+  "version": "5.0.0",
+  "peerDependencies": {
+    "@angular/common": "^15.0.0",
+    "@angular/core": "^15.0.0",
+    "@angular/router": "^15.0.0",
+    "rxjs": "^7.5.0"
+  },
+  "module": "fesm2015/northgate-lantern-sdk.mjs",
+  "typings": "index.d.ts",
+  "sideEffects": false
+}
+esm2020
+fesm2015
+fesm2020
+index.d.ts
+lib
+node_modules
+package.json
+public-api.d.ts
+metadata.json files: 0; ngcc markers: 0; partial markers (ɵɵngDeclare): 1
