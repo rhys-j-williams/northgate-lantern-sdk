@@ -5,10 +5,12 @@ Enablement (DAE)**, Charlotte. Slack `#dae-lantern`, Jira `LNTN`. On-call is bus
 analytics is not a P1 service and nobody should be paged for it (see the SLO exemption in
 `RISK-2019-118`).
 
-Current release: **4.0.0** (Angular 14, partial Ivy; `LNTN-401`, 2026.10.2 train), the second and
-last `LNTN-401` catch-up hop and the first release retail-web can pin. Previous lines: 3.0.0
-(Angular 13, partial Ivy) and 2.4.1 (Angular 12, View Engine), both still published for consumers
-on those majors. Next: Lantern follows the estate 14 -> 15 wave after `canopy-ui` 4 (Canopy MDC).
+Current release: **5.0.0** (Angular 15, Node 16, partial Ivy; `LNTN-401`, Stage 2 of the estate
+Angular 14 -> 15 wave, 2026.10.4 train proposed). **4.0.0 (Angular 14) stays in security support
+until retail-web has moved to 5.0.0 or for 90 days after the 5.0.0 publish, whichever is first
+(GIS-STD-022 s3).** Older lines 3.0.0 (Angular 13, partial Ivy) and 2.4.1 (Angular 12, View
+Engine) remain published but unsupported. Next: retail-web pins 5.0.0 together with Canopy 4.0.0
+(Stage 3, `MOL-4471`); Lantern 15 -> 16 is blocked on the vendor Ivy build `LNTN-140` (KAN-24).
 
 ## What it does
 
@@ -25,22 +27,25 @@ Consumers: retail-web (Northgate Online), business-web (Northgate Business), Bea
 ## Installing
 
 ```
-npm install @northgate/lantern-sdk@4.0.0 --save-exact
+npm install @northgate/lantern-sdk@5.0.0 --save-exact
 ```
 
-From Artifactory `npm-northgate`. Peer range is Angular 14 (`>=14.0.0 <15.0.0`, see below);
-applications on Angular 13 stay on 3.0.0 and applications on Angular 12 on 2.4.1. Partial-Ivy
-output is only supported on applications at or above the library's Angular major, so do not force
-the install past the peer range: `legacy-peer-deps=true` in retail-web's `.npmrc` is there for
-other reasons (`MOL-3611`). retail-web (Angular 14.3.0) is inside 4.0.0's range and was verified
-against it (`docs/upgrade/LNTN-401/13-to-14/CONSUMERS.md`); its pin bump is a retail-web PR
-(`MOL-4471`).
+From Artifactory `npm-northgate`. Peer range is Angular 15 (`^15.0.0`) and RxJS 7 (`^7.5.0`, see
+below); applications on Angular 14 stay on 4.0.0 (in security support, above), on Angular 13 on
+3.0.0 and on Angular 12 on 2.4.1. Partial-Ivy output is only supported on applications at or above
+the library's Angular major, so do not force the install past the peer range:
+`legacy-peer-deps=true` in retail-web's `.npmrc` is there for other reasons (`MOL-3611`) and only
+turns the `ERESOLVE` into `npm ls` `invalid` entries. retail-web (Angular 14.3.0) is below 5.0.0's
+range, which is the expected result recorded in `docs/upgrade/LNTN-401/14-to-15/CONSUMERS.md`; it
+pins 5.0.0 in its own Angular 15 change (`MOL-4471`). The candidate was verified in an Angular 15.2
+host (build and specs for `forRoot`, router tracking, `lanternTrack`, the interceptor).
 
 | library | Angular peer range | output | consumers |
 | --- | --- | --- | --- |
 | 2.4.1 | `>=12.0.0 <13.0.0` (retail-web installs it past the range with `legacy-peer-deps`; `ngcc` links it on install) | View Engine | retail-web 14.3.0 (current pin until `MOL-4471`), business-web |
 | 3.0.0 | `>=13.0.0 <14.0.0` | partial Ivy | none in the estate (intermediate hop) |
-| 4.0.0 | `>=14.0.0 <15.0.0` | partial Ivy | retail-web 14.3.0 (verified PASS; pin bump pending in `MOL-4471`) |
+| 4.0.0 | `>=14.0.0 <15.0.0` | partial Ivy | retail-web 14.3.0 (verified PASS; the supported line for Angular 14 consumers, security support per GIS-STD-022 s3) |
+| 5.0.0 | `^15.0.0`, rxjs `^7.5.0` | partial Ivy | none yet; retail-web pins it with Canopy 4.0.0 in `MOL-4471` (Stage 3). Verified in an Angular 15.2 host |
 
 ```ts
 // app.module.ts
@@ -115,11 +120,12 @@ them in application code.
 
 ## Build and release
 
-Node **14.21.3** (`.nvmrc`), Angular **14.3.0** (CLI 14.2.13), ng-packagr **14.2.2**, TypeScript
-**4.7.4**, RxJS 6.6.7, zone.js 0.11.4, TypeScript target es2020. Lint is angular-eslint 14
-(`.eslintrc.json`); TSLint and codelyzer were removed in 3.0.0 because the CLI 13 dropped the TSLint
-builder and codelyzer does not support Angular 13. Node stays 14 for the 14 line (inside Angular 14's
-`^14.15.0 || ^16.10.0`); the bump to 16.20.2 comes with 14 -> 15. The full matrix is in
+Node **16.20.2** / npm **8.19.4** (`.nvmrc`, `engines`; lockfile v2), Angular **15.2.10** (CLI
+15.2.11), ng-packagr **15.2.2**, TypeScript **4.9.5**, RxJS 7.8.1, zone.js 0.12.0, TypeScript
+target ES2022 (`useDefineForClassFields: false`). Lint is angular-eslint 15 (`.eslintrc.json`);
+TSLint and codelyzer were removed in 3.0.0 because the CLI 13 dropped the TSLint builder and
+codelyzer does not support Angular 13. The release job runs on the estate `nodejs16-rhel8` agent
+with `NODE_VERSION` matching `.nvmrc`. The full matrix is in
 `docs/upgrade/LNTN-401/COMPATIBILITY_MATRIX.md`.
 
 ```
@@ -132,8 +138,8 @@ npm run verify:partial-ivy
 npm run publish:local   # build, verify, pack, verify the tarball, publish to the registry in .npmrc
 ```
 
-The library is built with **Angular 14 and Ivy partial compilation** (`compilationMode: "partial"` in
-`tsconfig.lib.prod.json`), the Angular Package Format 14 layout (`fesm2015`, `fesm2020`, `esm2020`,
+The library is built with **Angular 15 and Ivy partial compilation** (`compilationMode: "partial"` in
+`tsconfig.lib.prod.json`), the Angular Package Format 15 layout (`fesm2015`, `fesm2020`, `esm2020`,
 `index.d.ts`, no UMD, no `.metadata.json`). Consuming applications link the output with the Angular linker in their
 own build, so the package must never be newer than the application's Angular major; the peer range
 enforces that. `scripts/verify-partial-ivy.js` (`verify:partial-ivy`) is the release gate: it fails
@@ -173,4 +179,6 @@ business-web copied the snippet and diverged (`LNTN-101`). 1.x was the un-scoped
 package; 2.0 (Nov 2021) renamed it to `@northgate/lantern-sdk` and moved to Angular 12. 2.2 added the
 router masking after GIS-1471. 2.4 is the last View Engine line. 3.0 (`LNTN-401`) moved to Angular 13
 and partial Ivy as the first of two catch-up hops ahead of the estate's Angular 15 wave; 4.0
-(`LNTN-401`) moved to Angular 14 and is the first release the Angular 14 applications can pin.
+(`LNTN-401`) moved to Angular 14 and is the first release the Angular 14 applications can pin. 5.0
+(`LNTN-401`, Stage 2 of the 14 -> 15 wave) moved to Angular 15 and Node 16 with RxJS 7 peers; 15 -> 16
+waits for the vendor Ivy build (`LNTN-140`).
